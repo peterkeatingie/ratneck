@@ -1,0 +1,29 @@
+body{
+    background-color: #eeeeee;
+    background-image:url('../images/background_metal.jpg');
+}
+
+#top-navbar{
+    padding-top:15px;
+}
+
+.panel{
+    border-radius:3px;
+}
+
+.panel-body{
+   
+}
+
+#dates-panel{
+
+    background-image: url('../images/monster_bottom_right.png');
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: 35%;
+    
+}
+
+.thumbnail{
+    
+}
