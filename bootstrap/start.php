@@ -62,7 +62,7 @@ require $framework.'/Illuminate/Foundation/start.php';
 
 /* IOC */
 
-require '../app/ioc.php';
+require $app['path.base'].'/app/ioc.php';
 
 /*
 |--------------------------------------------------------------------------

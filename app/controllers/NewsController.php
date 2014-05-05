@@ -1,10 +1,10 @@
 <?php
 
-class HomeController extends BaseController {
+class NewsController extends BaseController {
 
 	/*
 	|--------------------------------------------------------------------------
-	| Default Home Controller
+	| Default News Controller
 	|--------------------------------------------------------------------------
 	|
 	| You may wish to use controllers instead of, or in addition to, Closure
@@ -17,28 +17,15 @@ class HomeController extends BaseController {
 
 	public function getIndex()
 	{
-            $allMusic = Music::all();
-            
-            $firstTrack = Music::find(1);
-            $firstVideo = Video::find(1);
-            
-            $imageGalleries = ImageGallery::all();
-            
             $posts = Post::all();
             
             $imagesFolder = Config::get('app.imagesFolder');
             $thumbsFolder = Config::get('app.thumbnailsFolder');
-            
-            //echo $imageFolder;
-            
-            return View::make('home', array(
-                'allMusic' => $allMusic,
-                'firstTrack' => $firstTrack,
-                'firstVideo' => $firstVideo,
+        
+            return View::make('news', array(
                 'posts' => $posts,
                 'imagesFolder' => $imagesFolder,
                 'thumbsFolder' => $thumbsFolder,
-                'imageGalleries' => $imageGalleries,
                 ));
 	}
 

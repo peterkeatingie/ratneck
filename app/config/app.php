@@ -188,7 +188,7 @@ return array(
 
 	),
     
-    'imagesFolder' => '../images/',
-    'thumbnailsFolder' => '../images/thumbnails/',
+    'imagesFolder' => '../images/photos/',
+    'thumbnailsFolder' => '../images/photos/thumbnails/',
 
 );

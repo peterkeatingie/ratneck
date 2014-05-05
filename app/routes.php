@@ -12,3 +12,4 @@
 */
 
 Route::get('/', 'HomeController@getIndex');
+Route::get('news', 'NewsController@getIndex');

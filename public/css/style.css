@@ -1,29 +1,88 @@
 body{
-    background-color: #eeeeee;
-    background-image:url('../images/background_metal.jpg');
-}
-
-#top-navbar{
-    padding-top:15px;
+    background-color: #aaaaaa;
+    /* background-image:url('../images/crackles_2.jpg'); */
 }
 
 .panel{
     border-radius:3px;
 }
 
-.panel-body{
-   
+nav li{
+    display:inline;
+}
+
+#top-navbar{
+    padding-top:15px;
+    margin-bottom: 15px;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.social-icon{
 }
 
 #dates-panel{
-
     background-image: url('../images/monster_bottom_right.png');
     background-position: bottom right;
     background-repeat: no-repeat;
     background-size: 35%;
-    
+    min-height: 200px;
 }
+
+.remove-padding-left-right{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 
 .thumbnail{
     
+}
+
+.mythumb{
+    max-height: 40px;
+    min-height: 40px;
+}
+
+#md-fb-button{
+    margin-top: 10px;
+}
+
+.fb-like{
+    margin-bottom: 5px;
+}
+
+#twitter-widget-0{
+    margin-left: 10px;
+}
+
+#navbar-toggle{
+    margin: 0px;
+    padding: 0px;
+}
+
+@media(max-width: 767px){
+    body{
+        
+    }
+    
+    #banner-panel{
+        padding: 0px;
+    }
+ 
+    .panel-body{
+       
+    }
+   
+    .fb-like{
+        margin-left: 10px;
+        margin-top: 10px;
+        max-width: 100px;
+    }
+        
+    no-padding{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
 }
