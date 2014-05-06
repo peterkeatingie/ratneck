@@ -25,11 +25,11 @@ class HomeController extends BaseController {
             $imageGalleries = ImageGallery::all();
             
             $posts = Post::all();
+			
+			$featuredPost = $posts->shift();
             
             $imagesFolder = Config::get('app.imagesFolder');
             $thumbsFolder = Config::get('app.thumbnailsFolder');
-            
-            //echo $imageFolder;
             
             return View::make('home', array(
                 'allMusic' => $allMusic,
@@ -39,6 +39,7 @@ class HomeController extends BaseController {
                 'imagesFolder' => $imagesFolder,
                 'thumbsFolder' => $thumbsFolder,
                 'imageGalleries' => $imageGalleries,
+				'featuredPost' => $featuredPost,
                 ));
 	}
 

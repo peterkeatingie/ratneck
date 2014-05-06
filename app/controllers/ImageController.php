@@ -1,10 +1,10 @@
 <?php
 
-class MusicController extends BaseController {
+class ImageController extends BaseController {
 
 	/*
 	|--------------------------------------------------------------------------
-	| Default Music Controller
+	| Default Image Controller
 	|--------------------------------------------------------------------------
 	|
 	| You may wish to use controllers instead of, or in addition to, Closure
@@ -17,13 +17,19 @@ class MusicController extends BaseController {
 
 	public function getIndex()
 	{
-            $allMusic = Music::all();
-            $featuredMusic = $allMusic->shift();
-    
-            return View::make('music', array(
-                'allMusic' => $allMusic,
-                'featuredMusic' => $featuredMusic,
-                ));
+		$imageGalleries = ImageGallery::all();
+		
+		$featuredGallery = $imageGalleries->shift();
+		
+		$imagesFolder = Config::get('app.imagesFolder');
+		$thumbsFolder = Config::get('app.thumbnailsFolder');
+		
+		return View::make('images', array(
+			'imagesFolder' => $imagesFolder,
+			'thumbsFolder' => $thumbsFolder,
+			'imageGalleries' => $imageGalleries,
+			'featuredGallery' => $featuredGallery,
+			));
 	}
 
 }

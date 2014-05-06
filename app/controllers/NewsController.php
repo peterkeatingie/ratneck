@@ -18,7 +18,7 @@ class NewsController extends BaseController {
 	public function getIndex()
 	{
             $posts = Post::all();
-            $featuredPost = $posts[0];
+            $featuredPost = $posts->shift();
             
             $imagesFolder = Config::get('app.imagesFolder');
             $thumbsFolder = Config::get('app.thumbnailsFolder');

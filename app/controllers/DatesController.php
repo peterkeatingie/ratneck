@@ -1,10 +1,10 @@
 <?php
 
-class MusicController extends BaseController {
+class DatesController extends BaseController {
 
 	/*
 	|--------------------------------------------------------------------------
-	| Default Music Controller
+	| Default Dates Controller
 	|--------------------------------------------------------------------------
 	|
 	| You may wish to use controllers instead of, or in addition to, Closure
@@ -17,12 +17,10 @@ class MusicController extends BaseController {
 
 	public function getIndex()
 	{
-            $allMusic = Music::all();
-            $featuredMusic = $allMusic->shift();
-    
-            return View::make('music', array(
-                'allMusic' => $allMusic,
-                'featuredMusic' => $featuredMusic,
+
+        
+            return View::make('dates', array(
+
                 ));
 	}
 

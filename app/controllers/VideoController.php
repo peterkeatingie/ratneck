@@ -1,10 +1,10 @@
 <?php
 
-class MusicController extends BaseController {
+class VideoController extends BaseController {
 
 	/*
 	|--------------------------------------------------------------------------
-	| Default Music Controller
+	| Default Video Controller
 	|--------------------------------------------------------------------------
 	|
 	| You may wish to use controllers instead of, or in addition to, Closure
@@ -17,12 +17,12 @@ class MusicController extends BaseController {
 
 	public function getIndex()
 	{
-            $allMusic = Music::all();
-            $featuredMusic = $allMusic->shift();
+            $videos = Video::all();
+            $featuredVideo = $videos->shift();
     
-            return View::make('music', array(
-                'allMusic' => $allMusic,
-                'featuredMusic' => $featuredMusic,
+            return View::make('video', array(
+                'videos' => $videos,
+                'featuredVideo' => $featuredVideo,
                 ));
 	}
 
