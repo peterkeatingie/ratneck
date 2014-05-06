@@ -7,47 +7,99 @@
             <!-- Banner Panel -->
             <div class="panel panel-default">
                 <div class="panel-body" id="banner-panel">
-                    <img class="img-responsive pull-right" src="./images/eyes_short.jpg">
+                    <a href="/"><img class="img-responsive pull-right" src="./images/eyes_short.jpg"></a>
                 </div>
             </div>
             
             <!-- Banner Panel End -->
             
-            <!-- News Panel -->
-            <div class="panel panel-default">
+            
+        </div>
+        
+        <div class="col-md-5">
+
+			<div class="panel panel-default">
                 
-                @foreach($posts as $post)
-                <div class="panel-heading">
+
+                <div class="panel-body">
+
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <a class="fancybox thumbnail" href="{{$imagesFolder}}{{$featuredPost->getImage()->filename}}" class="thumbnail">
+                                <img src="{{$thumbsFolder}}{{$featuredPost->getImage()->getThumbnail()->filename}}" alt="Band">
+                            </a>
+                        </div>
+                        <div class="col-md-8">
+                            {{$featuredPost->content}}
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="panel-footer"><h5><a href="news">More News</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
+				
+            </div>
+     
+		</div>
+	</div>
+            
+	<div class="row">
+		<!-- News Panel -->
+			<div class="col-md-7">
+				
+					
+					@foreach($posts as $post)
+					
+				<div class="panel panel-default">
+					
+					
+					<div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-8">
                             <strong>{{$post->title}}</strong>
                         </div>
-                        
                     </div>
                 </div>
-            
-                
+
+					<div class="panel-body">
+						
+						<div class="row">
+												
+							<div class="col-md-4">
+								<a class="fancybox thumbnail" href="{{$imagesFolder}}{{$post->getImage()->filename}}" class="thumbnail">
+									<img src="{{$thumbsFolder}}{{$post->getImage()->getThumbnail()->filename}}" alt="Band">
+								</a>
+							</div>
+							<div class="col-md-8">
+								{{$post->content}}
+							</div>
+						</div>
+					</div>
+					
+					<div class="panel-footer"><h5><a href="news">More News</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
+					
+					
+				</div>
+					
+					@endforeach
+					
+					
+
+				
+				<!-- Music Panel -->
+            <div class="panel panel-default">
 
                 <div class="panel-body">
-                    
-                    <div class="row">
-                                            
-                        <div class="col-md-4">
-                            <a class="fancybox thumbnail" href="{{$imagesFolder}}{{$post->getImage()->filename}}" class="thumbnail">
-                                <img src="{{$thumbsFolder}}{{$post->getImage()->getThumbnail()->filename}}" alt="Band">
-                            </a>
-                        </div>
-                        <div class="col-md-8">
-                            {{$post->content}}
-                        </div>
-                    </div>
+                    <iframe width="100%" height="250" scrolling="no" frameborder="no" src="{{$firstTrack->location}}"></iframe>
                 </div>
-                @endforeach
-
+                
+				<div class="panel-footer"><h5><a href="music">More Music</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
+               
             </div>
-            <!-- News Panel -->
-            
-            <!-- Social Panel -->
+            <!-- Music Panel-->
+				
+				
+				<!-- Social Panel -->
             
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -76,54 +128,33 @@
                         </div>
                     </div>
                 </div>
-            </div>
+    
+			</div>
             <!-- Social Panel End -->
-        </div>
-        
-        <div class="col-md-5">
-
-            <!-- Music Panel -->
-            <div class="panel panel-default">
-
-                
-                <div class="panel-heading">
-                    <strong>Listen: {{$firstTrack->title}}</strong>
-
-                </div>
-
-                <div class="panel-body">
-                    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="{{$firstTrack->location}}"></iframe>
-                </div>
-                
-               
-            </div>
-            <!-- Music Panel-->
-
-            
+				
+				
+			</div>
+	
             <!-- Video Panel -->            
+			<div class="col-md-5">
             <div class="panel panel-default">
-
-                <div class="panel-heading">
-                    <strong>Watch: {{$firstVideo->title}}</strong>
-                </div>
 
                 <div class="panel-body">
                     <iframe width="100%" height="315" src="{{$firstVideo->location}}" frameborder="0" allowfullscreen></iframe>
                 </div>
+				
+				<div class="panel-footer"><h5><a href="video">More Videos</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
+				
             </div>
+		
             <!-- Video Panel -->
+			
             
             <!-- Photos Panel -->
+		
             <div class="panel panel-default">
 
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-8">
-                            <strong>Photos</strong>
-                        </div>
-                        
-                    </div>
-                </div>
+                
 
                 <div class="panel-body">
                     <div class="row">
@@ -147,14 +178,14 @@
                     @endforeach
                     </div>
                 </div>
+				
+				<div class="panel-footer"><h5><a href="photos">More Photos</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
 
             </div>
+			</div>
             <!-- Photos Panel End -->
-        </div>
-        
-    </div> 
+	</div>
 
-            
             <!-- Dates Panel -->
             <!--
             <div class="panel panel-default" id="dates-panel">

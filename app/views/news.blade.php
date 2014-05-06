@@ -6,7 +6,7 @@
         <div class="col-md-7">
             <div class="panel panel-default">
                 <div class="panel-body" id="banner-panel">
-                    <img class="img-responsive pull-right" src="./images/eyes_short.jpg">
+                    <a href="/"><img class="img-responsive pull-right" src="./images/eyes_short.jpg"></a>
                 </div>
             </div>
          </div>   
@@ -39,7 +39,7 @@
         </div>
 
         @foreach($posts as $post)
-        <div class="col-md-6">
+        <div class="col-md-7">
             <div class="panel panel-default">
                 
                 

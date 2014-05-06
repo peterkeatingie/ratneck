@@ -53,9 +53,10 @@
                     <ul class="nav navbar-nav navbar-right">
                       <li><a href="news">News</a></li>
                       <li><a href="music">Music</a></li>
-                      <li><a href="#">Video</a></li>
-                      <li><a href="#">Dates</a></li>
-                      <li><a href="#">Band</a></li>
+					  <li><a href="photos">Photos</a></li>
+                      <li><a href="video">Video</a></li>
+                      <li><a href="dates">Dates</a></li>
+                      <!--<li><a href="band">Band</a></li>-->
                       </ul>
 
 
