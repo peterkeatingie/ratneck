@@ -52,7 +52,7 @@
                   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                       <li><a href="news">News</a></li>
-                      <li><a href="#">Music</a></li>
+                      <li><a href="music">Music</a></li>
                       <li><a href="#">Video</a></li>
                       <li><a href="#">Dates</a></li>
                       <li><a href="#">Band</a></li>

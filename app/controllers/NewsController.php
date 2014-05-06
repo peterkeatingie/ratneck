@@ -18,12 +18,14 @@ class NewsController extends BaseController {
 	public function getIndex()
 	{
             $posts = Post::all();
+            $featuredPost = $posts[0];
             
             $imagesFolder = Config::get('app.imagesFolder');
             $thumbsFolder = Config::get('app.thumbnailsFolder');
         
             return View::make('news', array(
                 'posts' => $posts,
+                'featuredPost' => $featuredPost,
                 'imagesFolder' => $imagesFolder,
                 'thumbsFolder' => $thumbsFolder,
                 ));

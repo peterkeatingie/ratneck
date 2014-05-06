@@ -13,3 +13,4 @@
 
 Route::get('/', 'HomeController@getIndex');
 Route::get('news', 'NewsController@getIndex');
+Route::get('music', 'MusicController@getIndex');
