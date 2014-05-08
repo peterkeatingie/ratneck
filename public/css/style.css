@@ -1,26 +1,62 @@
 body{
-    background-color: #aaaaaa;
-    /* background-image:url('../images/crackles_2.jpg'); */
+    background-color: #272B30;
+    background-image:url('../images/decal_leaking.png');
+	background-repeat: repeat-x;
+}
+
+a{
+	color: #dd2222;
+}
+
+.container{
+	
+}
+
+.row{
+	
+}
+
+.navbar-default{
+	background-color: #454A51;
+	border-color: #272B30;
+}
+
+.navbar-default .navbar-nav li a{
+	color: #C8C8C8;
+}
+
+.panel-default .panel-heading{
+	background-color: #454A51;
+	border-style: none;
+	color: #C8C8C8;
 }
 
 .panel{
-    border-radius:3px;
+	border-style: none;
+	background-color: #454A51;
+	color: #C8C8C8;
 }
 
-nav li{
-    display:inline;
+.panel-footer{
+	text-align: right;
+	border-style: none;
+	background-color: #454A51;
+	margin-top: 0px;
+	padding-top: 0px;
 }
 
-#top-navbar{
-    padding-top:15px;
-    margin-bottom: 15px;
-    background-color: #f5f5f5;
-    border-color: #ddd;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px;
+h3, h4, h5{
+	margin-top: 0px;
 }
 
-.social-icon{
+.remove-padding-left-right{
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.thumbnail{
+	background-color: #454A51;
+	border-color: #C8C8C8;
 }
 
 #dates-panel{
@@ -29,15 +65,6 @@ nav li{
     background-repeat: no-repeat;
     background-size: 35%;
     min-height: 200px;
-}
-
-.remove-padding-left-right{
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-.thumbnail{
-    
 }
 
 .mythumb{
@@ -61,6 +88,7 @@ nav li{
     margin: 0px;
     padding: 0px;
 }
+
 
 @media(max-width: 767px){
     body{
