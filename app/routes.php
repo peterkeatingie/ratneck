@@ -14,3 +14,6 @@
 Route::get('/', 'HomeController@getIndex');
 Route::get('news', 'NewsController@getIndex');
 Route::get('music', 'MusicController@getIndex');
+Route::get('photos', 'ImageController@getIndex');
+Route::get('video', 'VideoController@getIndex');
+Route::get('dates', 'DatesController@getIndex');
