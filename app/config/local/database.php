@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'ratneck',
 			'username'  => 'root',
-			'password'  => '',
+			'password'  => $_ENV['databasePassword'],
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
