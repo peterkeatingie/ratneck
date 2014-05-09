@@ -5,8 +5,8 @@
     <div class="row">   
         <div class="col-md-7">
             <!-- Banner Panel -->
-            <div class="panel panel-default">
-                <div class="panel-body" id="banner-panel">
+            <div class="panel panel-default" id="panel-banner">
+                <div class="panel-body" id="panel-body-banner">
                     <a href="/"><img class="img-responsive pull-right" src="./images/eyes_short.jpg"></a>
                 </div>
             </div>
@@ -18,7 +18,7 @@
         
         <div class="col-md-5">
 
-			<div class="panel panel-default">
+			<div class="panel panel-default" id="panel-featured">
                 
 
                 <div class="panel-body">
