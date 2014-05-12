@@ -4,15 +4,17 @@
  * and open the template in the editor.
  */
 
+window.onload = function(){
+    resizeFeaturedPanel();
+}
 
 $(document).ready(function() {
     $('.fancybox').fancybox();
 
-	resizeFeaturedPanel();
-	
-	$(window).resize(function(){
-		resizeFeaturedPanel();
-	});
+
+    $(window).resize(function(){
+            resizeFeaturedPanel();
+    });
 	
 });
 

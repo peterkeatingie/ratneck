@@ -12,7 +12,7 @@
          </div>   
             
         <div class="col-md-5">
-            <div class="panel panel-default">
+            <div class="panel panel-default" id="panel-featured">
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-8">

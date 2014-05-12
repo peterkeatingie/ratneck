@@ -54,10 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'ratneck',
-			'username'  => 'root',
-			'password'  => '',
+			'host'      => 'mysql4.mylogin.ie',
+			'database'  => 'RGP17881_ratneckcom_new',
+			'username'  => 'ratneckcom',
+			'password'  => $_ENV['databasePassword'],
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

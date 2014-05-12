@@ -2,24 +2,21 @@
 
 @section('content')
 
-    <div class="row">   
-        <div class="col-md-7">
+    <div class="row" id="row-1">   
+        <div class="col-md-6">
             <!-- Banner Panel -->
             <div class="panel panel-default" id="panel-banner">
                 <div class="panel-body" id="panel-body-banner">
                     <a href="/"><img class="img-responsive pull-right" src="./images/eyes_short.jpg"></a>
                 </div>
             </div>
-            
             <!-- Banner Panel End -->
-            
-            
+      
         </div>
         
-        <div class="col-md-5">
+        <div class="col-md-6">
 
-			<div class="panel panel-default" id="panel-featured">
-                
+            <div class="panel panel-default" id="panel-featured">
 
                 <div class="panel-body">
 
@@ -30,30 +27,30 @@
                                 <img src="{{$thumbsFolder}}{{$featuredPost->getImage()->getThumbnail()->filename}}" alt="Band">
                             </a>
                         </div>
+                        
                         <div class="col-md-8">
                             {{$featuredPost->content}}
                         </div>
+                        
                     </div>
                 </div>
-				
-				<div class="panel-footer"><h5><a href="news">More News</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
-				
+		
             </div>
      
-		</div>
-	</div>
+        </div>
+    </div>
             
-	<div class="row">
-		<!-- News Panel -->
-			<div class="col-md-7">
+    <div class="row" id="row-2">
+
+        <div class="col-md-6">
 				
+            <!-- News -->
+            
+            @foreach($posts as $post)
 					
-					@foreach($posts as $post)
-					
-				<div class="panel panel-default">
-					
-					
-					<div class="panel-heading">
+            <div class="panel panel-default">
+							
+                <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-8">
                             <strong>{{$post->title}}</strong>
@@ -61,45 +58,147 @@
                     </div>
                 </div>
 
-					<div class="panel-body">
-						
-						<div class="row">
-												
-							<div class="col-md-4">
-								<a class="fancybox thumbnail" href="{{$imagesFolder}}{{$post->getImage()->filename}}" class="thumbnail">
-									<img src="{{$thumbsFolder}}{{$post->getImage()->getThumbnail()->filename}}" alt="Band">
-								</a>
-							</div>
-							<div class="col-md-8">
-								{{$post->content}}
-							</div>
-						</div>
-					</div>
-					
-					<div class="panel-footer"><h5><a href="news">More News</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
-					
-					
-				</div>
-					
-					@endforeach
+                <div class="panel-body">
+
+                        <div class="row">
+
+                                <div class="col-md-4">
+                                        <a class="fancybox thumbnail" href="{{$imagesFolder}}{{$post->getImage()->filename}}" class="thumbnail">
+                                                <img src="{{$thumbsFolder}}{{$post->getImage()->getThumbnail()->filename}}" alt="Band">
+                                        </a>
+                                </div>
+                                <div class="col-md-8">
+                                        {{$post->content}}
+                                </div>
+                        </div>
+                </div>
+
+                <div class="panel-footer"><h5><a href="news">More News</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
 					
 					
+            </div>
+
+            @endforeach
 
 				
-				<!-- Music Panel -->
+        </div>
+	
+
+        <div class="col-md-6">
+            <div class="row">
+                <!-- Music -->
+                <div class="col-md-6">
+
+                    <div class="panel panel-default">
+
+                        <div class="panel-body">
+                            <iframe class="media-iframe" width="100%" scrolling="no" frameborder="no" src="{{$firstTrack->location}}"></iframe>
+                        </div>
+
+                        <div class="panel-footer"><h5><a href="music">More Music</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
+
+                    </div>
+                </div>
+
+                <!-- Video -->
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+
+                        <div class="panel-body">
+                            <iframe class="media-iframe" width="100%" src="{{$firstVideo->location}}" frameborder="0" allowfullscreen></iframe>
+                        </div>
+
+                        <div class="panel-footer"><h5><a href="video">More Videos</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
+
+                     </div>
+
+                </div>
+            
+            </div>
+            <div class="row">
+                <!-- Photos Panel -->
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+
+                        <div class="panel-body">
+                            <div class="row">
+                            @foreach($imageGalleries as $imageGallery)
+
+
+                                <?php $images = $imageGallery->getImages(); ?>
+
+                                @foreach($images as $image)
+                                <div class="col-xs-3 col-md-2 remove-padding-left-right">
+
+                                    <a class="fancybox thumbnail" href="{{$imagesFolder}}{{$image->filename}}" class="thumbnail">
+
+                                        <img class="mythumb" src="{{$thumbsFolder}}{{$image->getThumbnail()->filename}}" alt="Band">
+
+                                        </a>
+
+                                </div>
+                                @endforeach
+
+                            @endforeach
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                
+    <div class="row" id="row-3">
+        <div class="col-md-6">             
+                        
             <div class="panel panel-default">
 
-                <div class="panel-body">
-                    <iframe width="100%" height="250" scrolling="no" frameborder="no" src="{{$firstTrack->location}}"></iframe>
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <strong>Follow us on Twitter</strong>
+                        </div>
+                        
+                    </div>
                 </div>
-                
-				<div class="panel-footer"><h5><a href="music">More Music</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
-               
+
+
+                <div class="panel-body">
+                  <a class="twitter-timeline" href="https://twitter.com/ratneckband" data-widget-id="459085992327000064">Tweets by @ratneckband</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+
+                </div>
+
             </div>
-            <!-- Music Panel-->
-				
-				
-				<!-- Social Panel -->
+            
+                        
+            
+        </div>
+        
+        
+        <div class="col-md-6">
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <strong>Join us on Facebook</strong>
+                        </div>
+                        
+                    </div>
+                </div>
+
+
+                <div class="panel-body panel-body-fb">
+                    <div class="fb-like-box" data-href="http://facebook.com/ratneck" data-width="250" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+                </div>
+
+            </div>
+            
+            <!-- Social -->
             
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -129,62 +228,12 @@
                     </div>
                 </div>
     
-			</div>
-            <!-- Social Panel End -->
-				
-				
-			</div>
-	
-            <!-- Video Panel -->            
-			<div class="col-md-5">
-            <div class="panel panel-default">
-
-                <div class="panel-body">
-                    <iframe width="100%" height="315" src="{{$firstVideo->location}}" frameborder="0" allowfullscreen></iframe>
-                </div>
-				
-				<div class="panel-footer"><h5><a href="video">More Videos</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
-				
             </div>
-		
-            <!-- Video Panel -->
-			
             
-            <!-- Photos Panel -->
-		
-            <div class="panel panel-default">
+        </div>
+    </div>
 
-                
 
-                <div class="panel-body">
-                    <div class="row">
-                    @foreach($imageGalleries as $imageGallery)
-                    
-                    
-                        <?php $images = $imageGallery->getImages(); ?>
-                        
-                        @foreach($images as $image)
-                        <div class="col-xs-3 col-md-2 remove-padding-left-right">
-                            
-                            <a class="fancybox thumbnail" href="{{$imagesFolder}}{{$image->filename}}" class="thumbnail">
-                            
-                                <img class="mythumb" src="{{$thumbsFolder}}{{$image->getThumbnail()->filename}}" alt="Band">
-                            
-                                </a>
-                            
-                        </div>
-                        @endforeach
-                    
-                    @endforeach
-                    </div>
-                </div>
-				
-				<div class="panel-footer"><h5><a href="photos">More Photos</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
-
-            </div>
-			</div>
-            <!-- Photos Panel End -->
-	</div>
 
             <!-- Dates Panel -->
             <!--
@@ -211,59 +260,5 @@
             </div>
             -->
             <!-- Dates Panel End -->
-                
-    <div class="row">
-        <div class="col-md-7">             
-                        
-            <div class="panel panel-default">
-
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-8">
-                            <strong>Follow us on Twitter</strong>
-                        </div>
-                        
-                    </div>
-                </div>
-
-
-                <div class="panel-body">
-                  <a class="twitter-timeline" href="https://twitter.com/ratneckband" data-widget-id="459085992327000064">Tweets by @ratneckband</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-
-
-                </div>
-
-            </div>
-            
-            
-        </div>
-        
-        
-        <div class="col-md-5">
-            <div class="panel panel-default">
-
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-8">
-                            <strong>Join us on Facebook</strong>
-                        </div>
-                        
-                    </div>
-                </div>
-
-
-                <div class="panel-body">
-                    <div class="fb-like-box" data-href="http://facebook.com/ratneck" data-width="250" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
-                </div>
-
-            </div>
-            
-        </div>
-    </div>
-        
-    </div>
-
 
 @stop

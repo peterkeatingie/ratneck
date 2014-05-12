@@ -28,6 +28,8 @@ a{
 .panel-default .panel-heading{
 	background-color: #454A51;
 	border-style: none;
+        border-bottom-style: solid;
+        border-color: #272B30;
 	color: #C8C8C8;
 }
 
@@ -48,6 +50,10 @@ a{
 	background-color: #454A51;
 	margin-top: 0px;
 	padding-top: 0px;
+}
+
+#panel-featured{
+    font-size:16px;
 }
 
 h3, h4, h5{
@@ -78,16 +84,21 @@ h3, h4, h5{
 }
 
 #md-fb-button{
-    margin-top: 10px;
+    margin-top: 0px;
 }
 
 .fb-like{
-    margin-bottom: 5px;
+    margin-top: 15px;
 }
 
-#twitter-widget-0{
-    margin-left: 10px;
+.twitter-share-button{
+     margin-top: 15px;
 }
+
+.panel-body-fb{
+    text-align: center;
+}
+
 
 #navbar-toggle{
     margin: 0px;
@@ -100,10 +111,18 @@ h3, h4, h5{
         
     }
     
+    .container-fluid{
+
+    }
+    
+    .navbar-default{
+        margin-bottom: 15px;
+    }
+    
     #panel-body-banner{
         padding: 0px;
-		margin-left: -15px;
-		margin-right: -15px;
+        margin-left: -15px;
+        margin-right: -15px;
     }
  
     .panel-body{
