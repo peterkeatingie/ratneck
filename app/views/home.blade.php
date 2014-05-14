@@ -142,6 +142,8 @@
                             @endforeach
                             </div>
                         </div>
+						
+						<div class="panel-footer"><h5><a href="photos">More Photos</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
 
                     </div>
                 </div>
