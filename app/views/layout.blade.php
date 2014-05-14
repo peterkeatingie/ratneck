@@ -71,7 +71,7 @@
                       <li><a href="news">News</a></li>
                       <li><a href="music">Music</a></li>
                       <li><a href="video">Video</a></li>
-                      <!--<li><a href="dates">Dates</a></li>-->
+                      <li><a href="photos">Gallery</a></li>
                       <!--<li><a href="band">Band</a></li>-->
                       </ul>
 

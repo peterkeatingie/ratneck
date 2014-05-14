@@ -13,7 +13,7 @@
             
         <div class="col-md-6">
             <!-- Video Panel -->
-            <div class="panel panel-default">
+            <div class="panel panel-default" id="panel-featured">
 
 
                 <div class="panel-body">
