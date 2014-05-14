@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="row">   
+    <div class="row" id="row-1">   
         <div class="col-md-6">
             <!-- Banner Panel -->
             <div class="panel panel-default" id="panel-banner">
@@ -16,7 +16,7 @@
             
         <div class="col-md-6">
             <!-- Music Panel -->
-            <div class="panel panel-default">
+            <div class="panel panel-default" id="panel-featured">
 
 
                 <div class="panel-body">
@@ -29,7 +29,7 @@
         </div>
 	</div>
 	
-	<div class="row">
+	<div class="row" id="row-2">
 
         @foreach($allMusic as $music)
         <div class="col-md-4">

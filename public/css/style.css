@@ -16,9 +16,19 @@ a{
 	
 }
 
+#nav-button{
+	border-color: #454A51;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
 .navbar-default{
 	background-color: #454A51;
 	border-color: #272B30;
+}
+
+#navbar-collapse{
+	border-style:none;
 }
 
 .navbar-default .navbar-nav li a{
@@ -28,7 +38,7 @@ a{
 .panel-default .panel-heading{
 	background-color: #454A51;
 	border-style: none;
-        border-bottom-style: solid;
+        border-bottom-style: none;
         border-color: #272B30;
 	color: #C8C8C8;
 }
@@ -50,6 +60,10 @@ a{
 	background-color: #454A51;
 	margin-top: 0px;
 	padding-top: 0px;
+}
+
+#panel-body-banner{
+	padding: 8px;
 }
 
 #panel-featured{
@@ -99,13 +113,6 @@ h3, h4, h5{
     text-align: center;
 }
 
-
-#navbar-toggle{
-    margin: 0px;
-    padding: 0px;
-}
-
-
 @media(max-width: 767px){
     body{
         
@@ -120,9 +127,7 @@ h3, h4, h5{
     }
     
     #panel-body-banner{
-        padding: 0px;
-        margin-left: -15px;
-        margin-right: -15px;
+        padding: 5px;
     }
  
     .panel-body{
@@ -131,8 +136,7 @@ h3, h4, h5{
    
     .fb-like{
         margin-left: 10px;
-        margin-top: 10px;
-        max-width: 100px;
+        max-width: 50px;
     }
         
     no-padding{

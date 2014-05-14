@@ -32,7 +32,7 @@
                   <!-- Brand and toggle get grouped for better mobile display -->
                   <div class="navbar-header">
                     
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <button type="button" id="nav-button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
                       <span class="sr-only">Toggle navigation</span>
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
@@ -40,31 +40,33 @@
                     </button>
 
                     <div class="row">
-                    <!--
-                        <div class="col-xs-6">
-                            <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="20" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>
-                        </div>
-                        <div class="col-xs-6">
-                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://ratneck.com">Tweet</a>
-                        </div>
-                    -->
+                    
+                        <div class="col-xs-3 col-md-5">
+							<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+                        
+							<!-- Like with names -->
+							<!-- <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div> -->
+						
+						</div>
+						
+						<div class="col-xs-3 col-md-5">
+							<a href="https://twitter.com/share" class="twitter-share-button" data-count="none">Tweet</a>
+							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                        
+							<!-- Twitter with count -->
+							<!--
+							<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+							-->
+						</div>
+                    
                     </div>
                     
-                    <!--
-                      <div id="xs-fb-button" class="fb-like visible-xs" data-href="https://developers.facebook.com/docs/plugins/" data-width="20" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>
-                    <div id="md-fb-button" class="fb-like hidden-xs" data-href="https://developers.facebook.com/docs/plugins/" data-width="20" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>
-                    -->
-                    
-                    <!--
-                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://ratneck.com">Tweet</a>
-                    -->
-
+                 
                   </div>
 
                   <!-- Collect the nav links, forms, and other content for toggling -->
-                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <div class="collapse navbar-collapse" id="navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                       <li><a href="news">News</a></li>
                       <li><a href="music">Music</a></li>

@@ -2,16 +2,16 @@
 
 @section('content')
 
-    <div class="row">   
-        <div class="col-md-7">
-            <div class="panel panel-default">
-                <div class="panel-body" id="banner-panel">
+    <div class="row" id="row-1">   
+        <div class="col-md-6">
+            <div class="panel panel-default" id="panel-banner">
+                <div class="panel-body" id="panel-body-banner">
                     <a href="/"><img class="img-responsive pull-right" src="./images/eyes_short.jpg"></a>
                 </div>
             </div>
          </div>   
             
-        <div class="col-md-5">
+        <div class="col-md-6">
             <!-- Video Panel -->
             <div class="panel panel-default">
 
@@ -26,7 +26,7 @@
         </div>
 	</div>
 	
-	<div class="row">
+	<div class="row" id="row-2">
 
         @foreach($videos as $video)
         <div class="col-md-6">
