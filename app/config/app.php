@@ -190,5 +190,7 @@ return array(
     
     'imagesFolder' => '../images/photos/',
     'thumbnailsFolder' => '../images/photos/thumbnails/',
+	
+	'ratsFolder' => 'rats_files',
 
 );
