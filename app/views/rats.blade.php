@@ -5,7 +5,7 @@
 <div class="panel panel-default" id="panel-banner">
 	<div class="panel-body" id="panel-body-banner">
 		@foreach($files as $file)
-			<a href="{{$file}}">{{$file}}</a>
+			<a href="{{$file}}">{{$file}}</a><br />
 		@endforeach
 	</div>
 </div>
