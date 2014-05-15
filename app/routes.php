@@ -17,3 +17,4 @@ Route::get('music', 'MusicController@getIndex');
 Route::get('photos', 'ImageController@getIndex');
 Route::get('video', 'VideoController@getIndex');
 Route::get('dates', 'DatesController@getIndex');
+Route::get('rats', 'RatsController@getIndex');
