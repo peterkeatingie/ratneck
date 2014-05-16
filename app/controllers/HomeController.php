@@ -24,9 +24,9 @@ class HomeController extends BaseController {
             
             $imageGalleries = ImageGallery::all();
             
-            $posts = Post::all();
+			$featuredPost = Post::getFeaturedItem();
 			
-			$featuredPost = $posts->shift();
+			$posts = Post::getHomePageItems();
             
             $imagesFolder = Config::get('app.imagesFolder');
             $thumbsFolder = Config::get('app.thumbnailsFolder');
