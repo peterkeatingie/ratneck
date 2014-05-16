@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-class Post extends Eloquent{
+class Post extends SiteItem{
     
     protected $image;
     
