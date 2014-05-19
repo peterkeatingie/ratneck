@@ -9,9 +9,11 @@
 class Post extends SiteItem{
     
     protected $image;
+    protected $postCategory;
     
     public function __construct(){
         $this->image = new Image();
+        $this->postCategory = new PostCategory();
     }
     
     public function setImage($image){
@@ -20,5 +22,9 @@ class Post extends SiteItem{
     
     public function getImage(){
         return $this->image->find($this->image_id);
+    }
+    
+    public function getPostCategory(){
+        return $this->postCategory->find($this->post_category_id);
     }
 }

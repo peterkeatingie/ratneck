@@ -17,13 +17,22 @@ class NewsController extends BaseController {
 
 	public function getIndex()
 	{
-            $posts = Post::all();
-            $featuredPost = $posts->shift();
+            $featuredPost = Post::getFeaturedItem();
+            
+            $slug = Input::get('post');
+            
+            if($slug){
+                $posts = Post::getBySlug($slug);
+            }
+            else{
+                $posts = Post::allByDateDesc();
+            }
             
             $imagesFolder = Config::get('app.imagesFolder');
             $thumbsFolder = Config::get('app.thumbnailsFolder');
         
             return View::make('news', array(
+                'slug' => $slug,
                 'posts' => $posts,
                 'featuredPost' => $featuredPost,
                 'imagesFolder' => $imagesFolder,

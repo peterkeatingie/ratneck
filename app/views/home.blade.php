@@ -52,8 +52,24 @@
 							
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-xs-8">
-                            <strong>{{$post->title}}</strong>
+                        <div class="col-md-6">
+                            <a href="news?post={{$post->slug}}"><strong>{{$post->getPostCategory()->name}}: {{$post->title}}</strong></a><br/>
+                        </div>
+                        
+                        <div class="col-md-6 right-align meta-info">
+                            <?php
+                                $date = date('jS M Y', strtotime($post->created_on));
+                            ?>
+                            
+                            <i><small>{{$date}}
+                            
+                            by
+                            
+                            <?php
+                                $authorName = User::getAliasById($post->created_by);
+                            ?>
+                            
+                            {{$authorName}}</small></i>
                         </div>
                     </div>
                 </div>

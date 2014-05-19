@@ -6,6 +6,6 @@
  * and open the template in the editor.
  */
 
-class Music extends Eloquent{
+class Music extends SiteItem{
     protected $table = 'music';
 }

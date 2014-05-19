@@ -17,12 +17,21 @@ class MusicController extends BaseController {
 
 	public function getIndex()
 	{
-            $allMusic = Music::all();
-            $featuredMusic = $allMusic->shift();
+            $featuredTrack = Music::getFeaturedItem();
+            
+            $slug = Input::get('post');
+            
+            if($slug){
+                $tracks = Music::getBySlug($slug);
+            }
+            else{
+                $tracks = Music::allByDateDesc();
+            }
     
             return View::make('music', array(
-                'allMusic' => $allMusic,
-                'featuredMusic' => $featuredMusic,
+                'slug' => $slug,
+                'tracks' => $tracks,
+                'featuredTrack' => $featuredTrack,
                 ));
 	}
 

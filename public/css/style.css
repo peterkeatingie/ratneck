@@ -43,6 +43,15 @@ a{
 	color: #C8C8C8;
 }
 
+.no-wrap{
+    overflow:hidden;
+    white-space:nowrap;
+}
+
+.panel-heading a{
+    color: #C8C8C8;
+}
+
 .panel{
 	border-style: none;
 	border-radius: 3px;
@@ -52,6 +61,18 @@ a{
 
 .panel-body{
 	padding: 13px;
+}
+
+.right-align{
+    text-align: right;
+}
+
+.news-panel{
+    height: 240px;
+}
+
+.meta-info{
+    color: #a6a6a6;
 }
 
 .panel-footer{
@@ -118,6 +139,10 @@ h3, h4, h5{
         
     }
     
+    .right-align{
+        text-align: left;
+    }
+    
     .container-fluid{
 
     }
@@ -142,5 +167,9 @@ h3, h4, h5{
     no-padding{
         padding-left: 0px;
         padding-right: 0px;
+    }
+    
+    .news-panel{
+        height: auto;
     }
 }

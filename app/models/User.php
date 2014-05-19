@@ -79,5 +79,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	{
 		return $this->email;
 	}
+        
+        public static function getAliasById($id){
+            return self::find($id)->alias;
+        }
 
 }
