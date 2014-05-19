@@ -6,6 +6,6 @@
  * and open the template in the editor.
  */
 
-class Video extends Eloquent{
+class Video extends SiteItem{
 
 }

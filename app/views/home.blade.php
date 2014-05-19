@@ -108,7 +108,7 @@
                     <div class="panel panel-default">
 
                         <div class="panel-body">
-                            <iframe class="media-iframe" width="100%" scrolling="no" frameborder="no" src="{{$firstTrack->location}}"></iframe>
+                            <iframe class="music-iframe-home" scrolling="no" frameborder="no" src="{{$track->location}}"></iframe>
                         </div>
 
                         <div class="panel-footer"><h5><a href="music">More Music</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
@@ -121,7 +121,7 @@
                     <div class="panel panel-default">
 
                         <div class="panel-body">
-                            <iframe class="media-iframe" width="100%" src="{{$firstVideo->location}}" frameborder="0" allowfullscreen></iframe>
+                            <iframe class="video-iframe-home" src="{{$video->location}}" frameborder="0" allowfullscreen></iframe>
                         </div>
 
                         <div class="panel-footer"><h5><a href="video">More Videos</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>

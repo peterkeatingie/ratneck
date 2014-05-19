@@ -17,10 +17,19 @@ class VideoController extends BaseController {
 
 	public function getIndex()
 	{
-            $videos = Video::all();
-            $featuredVideo = $videos->shift();
+            $featuredVideo = Video::getFeaturedItem();
+            
+            $slug = Input::get('post');
+            
+            if($slug){
+                $videos = Video::getBySlug($slug);
+            }
+            else{
+                $videos = Video::allByDateDesc();
+            }
     
             return View::make('video', array(
+                'slug' => $slug,
                 'videos' => $videos,
                 'featuredVideo' => $featuredVideo,
                 ));

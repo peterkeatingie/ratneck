@@ -14,32 +14,32 @@ class HomeController extends BaseController {
 	|	Route::get('/', 'HomeController@showWelcome');
 	|
 	*/
-
 	public function getIndex()
 	{
-            $allMusic = Music::all();
+            // Get posts
+            $featuredPost = Post::getFeaturedItem();
+            $posts = Post::getHomePageItems(3);
             
-            $firstTrack = Music::find(1);
-            $firstVideo = Video::find(1);
+            // Get Music
+            $track = Music::getHomePageItems(1)->first();
+
+            // Get Video
+            $video = Video::getHomePageItems(1)->first();
             
+            // Get Galleries
             $imageGalleries = ImageGallery::all();
-            
-			$featuredPost = Post::getFeaturedItem();
-			
-			$posts = Post::getHomePageItems();
             
             $imagesFolder = Config::get('app.imagesFolder');
             $thumbsFolder = Config::get('app.thumbnailsFolder');
             
             return View::make('home', array(
-                'allMusic' => $allMusic,
-                'firstTrack' => $firstTrack,
-                'firstVideo' => $firstVideo,
+                'featuredPost' => $featuredPost,
                 'posts' => $posts,
+                'track' => $track,
+                'video' => $video,
                 'imagesFolder' => $imagesFolder,
                 'thumbsFolder' => $thumbsFolder,
                 'imageGalleries' => $imageGalleries,
-				'featuredPost' => $featuredPost,
                 ));
 	}
 

@@ -11,7 +11,7 @@
             </div>
          </div>   
             
-        <div class="col-md-6">
+        <div class="col-md-6 hidden-xs">
             <div class="panel panel-default" id="panel-featured">
 
                 <div class="panel-body">

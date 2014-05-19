@@ -63,6 +63,36 @@ a{
 	padding: 13px;
 }
 
+.music-iframe{
+    height: 250px;
+    width: 100%;
+}
+
+.music-iframe-single{
+    height: 450px;
+    width: 100%;
+}
+
+.music-iframe-home{
+    height: 220px;
+    width: 100%;
+}
+
+.video-iframe{
+    height: 315px;
+    width: 100%;
+}
+
+.video-iframe-single{
+    height: 450px;
+    width: 100%;
+}
+
+.video-iframe-home{
+    height: 220px;
+    width: 100%;
+}
+
 .right-align{
     text-align: right;
 }
@@ -171,5 +201,15 @@ h3, h4, h5{
     
     .news-panel{
         height: auto;
+    }
+    
+    .music-iframe-single{
+        height: 300px;
+        width: 100%;
+    }
+    
+    .video-iframe-single{
+        height: 300px;
+        width: 100%;
     }
 }
