@@ -192,5 +192,8 @@ return array(
     'thumbnailsFolder' => '../images/photos/thumbnails/',
 	
 	'ratsFolder' => 'rats_files',
+	
+	'splash' => $_ENV['splash'],
+	'splashImage' => '../images/splash/splash.jpg'
 
 );

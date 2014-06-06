@@ -31,8 +31,13 @@ class HomeController extends BaseController {
             
             $imagesFolder = Config::get('app.imagesFolder');
             $thumbsFolder = Config::get('app.thumbnailsFolder');
+			
+			$splashImage = Config::get('app.splashImage');
+			$splash = Config::get('app.splash');
             
             return View::make('home', array(
+				'splashImage' => $splashImage,
+				'splash' => $splash,
                 'featuredPost' => $featuredPost,
                 'posts' => $posts,
                 'track' => $track,

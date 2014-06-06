@@ -16,6 +16,10 @@ $(document).ready(function() {
             resizeFeaturedPanel();
     });
 	
+	if(splash){
+		$('#splash').click();
+	}
+	
 });
 
 function openFancyBox(){

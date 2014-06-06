@@ -2,6 +2,15 @@
 
 @section('content')
 
+@if($splash)
+		<a id="splash" class="fancybox" href="{{$splashImage}}">
+
+		</a>
+		<script>
+			var splash = '<?php echo $splash; ?>';
+		</script>
+	@endif
+
     <div class="row" id="row-1">   
         <div class="col-md-6">
             <!-- Banner Panel -->
