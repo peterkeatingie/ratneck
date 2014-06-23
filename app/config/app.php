@@ -193,6 +193,8 @@ return array(
 	
 	'ratsFolder' => 'rats_files',
 	
+	'carouselFolder' => '../images/carousel/',
+	
 	'splash' => $_ENV['splash'],
 	'splashImage' => '../images/splash/splash.jpg'
 

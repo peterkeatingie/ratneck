@@ -17,6 +17,9 @@ class NewsController extends BaseController {
 
 	public function getIndex()
 	{
+			// Header image
+            $carouselImage = Carousel::getRandom();
+			
             $featuredPost = Post::getFeaturedItem();
             
             $slug = Input::get('post');
@@ -30,8 +33,11 @@ class NewsController extends BaseController {
             
             $imagesFolder = Config::get('app.imagesFolder');
             $thumbsFolder = Config::get('app.thumbnailsFolder');
+			$carouselFolder = Config::get('app.carouselFolder');
         
             return View::make('news', array(
+				'carouselImage' => $carouselImage,
+                'carouselFolder' => $carouselFolder,
                 'slug' => $slug,
                 'posts' => $posts,
                 'featuredPost' => $featuredPost,

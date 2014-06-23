@@ -6,7 +6,7 @@
         <div class="col-md-7">
             <div class="panel panel-default">
                 <div class="panel-body" id="banner-panel">
-                    <a href="/"><img class="img-responsive pull-right" src="./images/eyes_short.jpg"></a>
+                    <a href="/"><img class="img-responsive pull-right" src="{{$carouselFolder}}{{$carouselImage->filename}}"></a>
                 </div>
             </div>
          </div>   

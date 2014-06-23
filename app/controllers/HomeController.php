@@ -16,6 +16,9 @@ class HomeController extends BaseController {
 	*/
 	public function getIndex()
 	{
+			// Header image
+            $carouselImage = Carousel::getRandom();
+			
             // Get posts
             $featuredPost = Post::getFeaturedItem();
             $posts = Post::getHomePageItems(3);
@@ -31,6 +34,7 @@ class HomeController extends BaseController {
             
             $imagesFolder = Config::get('app.imagesFolder');
             $thumbsFolder = Config::get('app.thumbnailsFolder');
+			$carouselFolder = Config::get('app.carouselFolder');
 			
 			$splashImage = Config::get('app.splashImage');
 			$splash = Config::get('app.splash');
@@ -38,6 +42,7 @@ class HomeController extends BaseController {
             return View::make('home', array(
 				'splashImage' => $splashImage,
 				'splash' => $splash,
+				'carouselImage' => $carouselImage,
                 'featuredPost' => $featuredPost,
                 'posts' => $posts,
                 'track' => $track,
@@ -45,6 +50,7 @@ class HomeController extends BaseController {
                 'imagesFolder' => $imagesFolder,
                 'thumbsFolder' => $thumbsFolder,
                 'imageGalleries' => $imageGalleries,
+				'carouselFolder' => $carouselFolder,
                 ));
 	}
 

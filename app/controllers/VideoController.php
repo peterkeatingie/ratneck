@@ -17,6 +17,9 @@ class VideoController extends BaseController {
 
 	public function getIndex()
 	{
+			// Header image
+            $carouselImage = Carousel::getRandom();
+			
             $featuredVideo = Video::getFeaturedItem();
             
             $slug = Input::get('post');
@@ -27,8 +30,12 @@ class VideoController extends BaseController {
             else{
                 $videos = Video::allByDateDesc();
             }
+			
+			$carouselFolder = Config::get('app.carouselFolder');
     
             return View::make('video', array(
+				'carouselImage' => $carouselImage,
+                'carouselFolder' => $carouselFolder,
                 'slug' => $slug,
                 'videos' => $videos,
                 'featuredVideo' => $featuredVideo,

@@ -17,14 +17,20 @@ class ImageController extends BaseController {
 
 	public function getIndex()
 	{
+		// Header image
+		$carouselImage = Carousel::getRandom();
+		
 		$imageGalleries = ImageGallery::all();
 		
 		$featuredGallery = $imageGalleries->shift();
 		
 		$imagesFolder = Config::get('app.imagesFolder');
 		$thumbsFolder = Config::get('app.thumbnailsFolder');
+		$carouselFolder = Config::get('app.carouselFolder');
 		
 		return View::make('images', array(
+			'carouselImage' => $carouselImage,
+			'carouselFolder' => $carouselFolder,
 			'imagesFolder' => $imagesFolder,
 			'thumbsFolder' => $thumbsFolder,
 			'imageGalleries' => $imageGalleries,

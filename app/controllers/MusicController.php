@@ -17,7 +17,10 @@ class MusicController extends BaseController {
 
 	public function getIndex()
 	{
-            $featuredTrack = Music::getFeaturedItem();
+			// Header image
+            $carouselImage = Carousel::getRandom();
+            
+			$featuredTrack = Music::getFeaturedItem();
             
             $slug = Input::get('post');
             
@@ -27,8 +30,12 @@ class MusicController extends BaseController {
             else{
                 $tracks = Music::allByDateDesc();
             }
+			
+			$carouselFolder = Config::get('app.carouselFolder');
     
             return View::make('music', array(
+				'carouselImage' => $carouselImage,
+                'carouselFolder' => $carouselFolder,
                 'slug' => $slug,
                 'tracks' => $tracks,
                 'featuredTrack' => $featuredTrack,
