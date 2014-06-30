@@ -19,3 +19,4 @@ Route::get('video', 'VideoController@getIndex');
 Route::get('dates', 'DatesController@getIndex');
 Route::get('rats', 'RatsController@getIndex');
 Route::get('signup', 'AuthController@getSignup');
+Route::post('signup/register', 'AuthController@getRegister');
