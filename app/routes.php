@@ -18,3 +18,4 @@ Route::get('photos', 'ImageController@getIndex');
 Route::get('video', 'VideoController@getIndex');
 Route::get('dates', 'DatesController@getIndex');
 Route::get('rats', 'RatsController@getIndex');
+Route::get('signup', 'AuthController@getSignup');
