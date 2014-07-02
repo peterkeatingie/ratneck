@@ -27,6 +27,32 @@
 				</div>
 				
 				<div class="form-group">
+					{{ Form::label('first_name', 'First Name') }}
+					{{ Form::text('first_name', null, array(
+						'class' => 'form-control',
+						'placeholder' => 'Enter First Name',
+						)) }}
+						
+					@foreach($errors->get('first_name') as $message)
+						{{ $message }}
+					@endforeach
+					
+				</div>
+				
+				<div class="form-group">
+					{{ Form::label('second_name', 'Surname') }}
+					{{ Form::text('second_name', null, array(
+						'class' => 'form-control',
+						'placeholder' => 'Enter Surname',
+						)) }}
+						
+					@foreach($errors->get('second_name') as $message)
+						{{ $message }}
+					@endforeach
+					
+				</div>
+				
+				<div class="form-group">
 					{{ Form::label('alias', 'Alias') }}
 					{{ Form::text('alias', null, array(
 						'class' => 'form-control',

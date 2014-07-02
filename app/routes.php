@@ -10,7 +10,6 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
 Route::get('/', 'HomeController@getIndex');
 Route::get('news', 'NewsController@getIndex');
 Route::get('music', 'MusicController@getIndex');
@@ -20,3 +19,15 @@ Route::get('dates', 'DatesController@getIndex');
 Route::get('rats', 'RatsController@getIndex');
 Route::get('signup', 'AuthController@getSignup');
 Route::post('signup/register', 'AuthController@getRegister');
+Route::get('login', 'AuthController@getLogin');
+Route::post('login/authenticate', 'AuthController@getAuthenticate');
+
+Route::get('admin', array(
+	'before' => 'auth',
+	'uses' => 'AdminController@getIndex',
+));
+
+Route::get('admin/gallery', array(
+	'before' => 'auth',
+	'uses' => 'AdminController@getGallery',
+));
