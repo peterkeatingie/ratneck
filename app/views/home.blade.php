@@ -62,7 +62,7 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-md-6">
-                            <a href="news?post={{$post->slug}}"><strong>{{$post->getPostCategory()->name}}: {{$post->title}}</strong></a><br/>
+                            <a href="/news?post={{$post->slug}}"><strong>{{$post->getPostCategory()->name}}: {{$post->title}}</strong></a><br/>
                         </div>
                         
                         <div class="col-md-6 right-align meta-info">
@@ -98,7 +98,7 @@
                         </div>
                 </div>
 
-                <div class="panel-footer"><h5><a href="news">More News</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
+                <div class="panel-footer"><h5><a href="/news">More News</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
 					
 					
             </div>
@@ -120,7 +120,7 @@
                             <iframe class="music-iframe-home" scrolling="no" frameborder="no" src="{{$track->location}}"></iframe>
                         </div>
 
-                        <div class="panel-footer"><h5><a href="music">More Music</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
+                        <div class="panel-footer"><h5><a href="/music">More Music</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
 
                     </div>
                 </div>
@@ -168,7 +168,7 @@
                             </div>
                         </div>
 						
-						<div class="panel-footer"><h5><a href="photos">More Photos</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
+						<div class="panel-footer"><h5><a href="/photos">More Photos</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
 
                     </div>
                 </div>

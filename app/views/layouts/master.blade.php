@@ -7,10 +7,10 @@
       <title>ratneck.com</title>
 
       <!-- Bootstrap -->
-      <link href="./bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">
-      <link href="./css/style.css" rel="stylesheet">
+      <link href="/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">
+      <link href="/css/style.css" rel="stylesheet">
 
-      <link href="./fancybox/source/jquery.fancybox.css" rel="stylesheet">
+      <link href="/fancybox/source/jquery.fancybox.css" rel="stylesheet">
 	  
 	<!-- Google Analytics -->
 		  <script>
@@ -80,10 +80,10 @@
                   <!-- Collect the nav links, forms, and other content for toggling -->
                   <div class="collapse navbar-collapse" id="navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                      <li><a href="news">News</a></li>
-                      <li><a href="music">Music</a></li>
-                      <li><a href="video">Video</a></li>
-                      <li><a href="photos">Gallery</a></li>
+                      <li><a href="/news">News</a></li>
+                      <li><a href="/music">Music</a></li>
+                      <li><a href="/video">Video</a></li>
+                      <li><a href="/photos">Gallery</a></li>
                       <!--<li><a href="band">Band</a></li>-->
                       </ul>
 
@@ -103,9 +103,9 @@
         </div><!-- Container -->
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="./bootstrap-3.1.1/js/bootstrap.min.js"></script>
-        <script src="./fancybox/source/jquery.fancybox.js"></script>
-        <script src="./js/script.js"></script>
+        <script src="/bootstrap-3.1.1/js/bootstrap.min.js"></script>
+        <script src="/fancybox/source/jquery.fancybox.js"></script>
+        <script src="/js/script.js"></script>
         
     </body>
 </html>
