@@ -27,7 +27,17 @@ Route::get('admin', array(
 	'uses' => 'AdminController@getIndex',
 ));
 
-Route::get('admin/gallery', array(
+Route::get('admin/galleries', array(
 	'before' => 'auth',
-	'uses' => 'AdminController@getGallery',
+	'uses' => 'AdminController@getGalleries',
+));
+
+Route::get('admin/images', array(
+	'before' => 'auth',
+	'uses' => 'AdminController@getImages',
+));
+
+Route::post('admin/images/upload', array(
+	'before' => 'auth',
+	'uses' => 'AdminController@getUploadImage',
 ));

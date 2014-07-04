@@ -17,7 +17,8 @@
 					}
 				?>
 				
-				<a href="admin/gallery"><button type="button" class="btn btn-default">Galleries</button></a>
+				<a href="admin/images"><button type="button" class="btn btn-default">Images</button></a>
+				<a href="admin/galleries"><button type="button" class="btn btn-default">Galleries</button></a>
 				
 			</div>
 

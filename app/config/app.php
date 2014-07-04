@@ -188,14 +188,16 @@ return array(
 
 	),
     
-    'imagesFolder' => '../images/photos/',
-    'thumbnailsFolder' => '../images/photos/thumbnails/',
+    'imagesFolder' => '/images/uploads/',
+    'thumbnailsFolder' => '/images/uploads/thumbnails/',
 	
 	'ratsFolder' => 'rats_files',
 	
-	'carouselFolder' => '../images/carousel/',
+	'carouselFolder' => '/images/carousel/',
 	
 	'splash' => $_ENV['splash'],
-	'splashImage' => '../images/splash/splash.jpg'
+	'splashImage' => '/images/splash/splash.jpg',
+	
+	'thumbnailWidth' => 200,
 
 );
