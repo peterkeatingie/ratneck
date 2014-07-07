@@ -52,8 +52,22 @@ class AdminController extends BaseController {
 	{
         $images = Image::all();
 		
+		$imagesFolder = Config::get('app.imagesFolder');
+		$thumbsFolder = Config::get('app.thumbnailsFolder');
+		
+		$galleries = ImageGallery::all();
+		
+		$galleryFormOptions = array();
+		
+		foreach($galleries as $gallery){
+			$galleryFormOptions[$gallery->id] = $gallery->name;
+		}
+		
 		return View::make('admin.images', array(
 				'images' => $images,
+				'thumbsFolder' => $thumbsFolder,
+				'imagesFolder' => $imagesFolder,
+				'galleryFormOptions' => $galleryFormOptions,
 		));
 	}
 	
@@ -62,6 +76,8 @@ class AdminController extends BaseController {
 
 		$rules = array(
 			'image' => 'required|image',
+			'gallery' => 'required',
+			'description' => 'required|max:255',
 		);
 		
 		$validator = Validator::make($data, $rules);
@@ -80,10 +96,15 @@ class AdminController extends BaseController {
 			$uploadSuccess = $file->move($destinationFolder, $applicationFilename);
 
 			if($uploadSuccess){
-				//$image = new Image();
-				//$image->filename = $applicationFilename;
 				
-				$this->createThumbnailImage($applicationFilename, $destinationFolder);
+				$thumbnailId = $this->createThumbnailImage($applicationFilename, $destinationFolder);
+				
+				$image = new Image();
+				$image->filename = $applicationFilename;
+				$image->thumbnail_id = $thumbnailId;
+				$image->created_by = Auth::user()->id;
+				$image->description = $data['description'];
+				$image->save();
 				
 				return Redirect::to('/admin/images')->with('uploadMessage', 'File uploaded OK');
 			}
@@ -124,5 +145,13 @@ class AdminController extends BaseController {
 		imagejpeg($thumbnail, $thumbnailPath, 60);
 						
 		imagedestroy($thumbnail);
+		
+		$thumbnailRecord = new Thumbnail();
+		
+		$thumbnailRecord->filename = "thumb_ " . $applicationFilename;
+		$thumbnailRecord->created_by = Auth::user()->id;
+		$thumbnailRecord->save();
+		
+		return $thumbnailRecord->id;
 	}
 }

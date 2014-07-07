@@ -6,13 +6,21 @@
 		<div class="panel panel-default">
 
 			<div class="panel-heading">
-				<h2><a href="/admin">Admin</a></h2>
+				<h3>Manage images</h3>
 			</div>
 
 			<div class="panel-body">
-				<h3>Images</h3>
+				
 					@foreach($images as $image)
-						<a href="?id={{$image->id}}"><button type="button" class="btn btn-danger">{{$image->filename}}</button></a>
+						<div class="col-xs-3 col-md-2 remove-padding-left-right">
+
+							<a class="fancybox thumbnail" href="{{$imagesFolder}}{{$image->filename}}" class="thumbnail">
+
+								<img class="mythumb" src="{{$thumbsFolder}}{{$image->getThumbnail()->filename}}" alt="Band">
+
+							</a>
+
+						</div>
 					@endforeach
 			</div>
 
@@ -25,18 +33,21 @@
 		<div class="panel panel-default">
 
 			<div class="panel-heading">
-				<h2><a href="/admin">Admin</a></h2>
+				<h2><a href="/admin">Upload new image</a></h2>
 			</div>
 	
 	
 			<div class="panel-body">
-				<h3>Upload new image</h3>
-					<div class="form-group">
-						{{ Form::open(array(
+					
+					{{ Form::open(array(
 							'url' => 'admin/images/upload',
 							'role' => 'form',
 							'files' => true,
 							)) }}
+					
+					<div class="form-group">
+					
+						{{ Form::label('image', 'Choose an image') }}
 		
 						{{ Form::file('image', array(
 							'class' => 'form-control',
@@ -45,19 +56,57 @@
 						@foreach($errors->get('image') as $message)
 							{{ $message }}
 						@endforeach	
-						
-						<?php
-							$uploadMessage = Session::get('uploadMessage');
-							if($uploadMessage){
-								echo $uploadMessage;
-							}
-						?>
 							
 					</div>
+					
+					<div class="form-group">
+					
+						{{ Form::label('description', 'Enter a description') }}
+		
+						{{ Form::text('description', null, array(
+							'class' => 'form-control',
+							)) }}
+							
+						@foreach($errors->get('description') as $message)
+							{{ $message }}
+						@endforeach	
+							
+					</div>
+					
+					<div class="form-group">
+						{{ Form::label('gallery', 'Choose a gallery') }}
+					
+						{{ Form::select('gallery', $galleryFormOptions, null, array(
+							'class' => 'form-control',
+							)) }}
+							
+						@foreach($errors->get('gallery') as $message)
+							{{ $message }}
+						@endforeach	
+					</div>
+					
+					<div class="checkbox">
+						{{ Form::label('banner', 'Use as banner image') }}
+					
+						{{ Form::checkbox('banner', 1, false ) }}
+							
+						@foreach($errors->get('banner') as $message)
+							{{ $message }}
+						@endforeach	
+					</div>
+					
+					<?php
+						$uploadMessage = Session::get('uploadMessage');
+						if($uploadMessage){
+							echo $uploadMessage;
+						}
+					?>
 						
 					<div class="form-group">
 			
-						{{ Form::submit('Upload') }}
+						{{ Form::submit('Upload', array(
+							'class' => 'btn btn-default',
+							)) }}
 				
 					</div>
 					
