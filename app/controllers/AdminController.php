@@ -106,6 +106,17 @@ class AdminController extends BaseController {
 				$image->description = $data['description'];
 				$image->save();
 				
+				$imageGalleryImage = new ImageGalleryImage();
+				$imageGalleryImage->image_gallery_id = $data['gallery'];
+				$imageGalleryImage->image_id = $image->id;
+				$imageGalleryImage->save();
+				
+				if(isset($data['banner'])){
+					$carousel = new Carousel();
+					$carousel->image_id = $image->id;
+					$carousel->save();
+				}
+				
 				return Redirect::to('/admin/images')->with('uploadMessage', 'File uploaded OK');
 			}
 			else{
