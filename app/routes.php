@@ -41,3 +41,5 @@ Route::post('admin/images/upload', array(
 	'before' => 'auth',
 	'uses' => 'AdminController@getUploadImage',
 ));
+
+Route::get('signup/verify', 'AuthController@getVerify');

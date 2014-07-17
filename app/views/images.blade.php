@@ -19,7 +19,7 @@
 						<div class="row">
 						
 						
-						
+						@if($featuredGallery)
 							<?php $images = $featuredGallery->getImages(); ?>
 							
 							@foreach($images as $image)
@@ -33,7 +33,7 @@
 								
 							</div>
 							@endforeach
-						
+						@endif
 						
 						</div>
 
@@ -52,6 +52,12 @@
 		<div class="col-md-6">
 			<div class="panel panel-default">
 
+			<div class="panel-heading">
+                    
+			<a href="/photos?post={{$imageGallery->slug}}"><strong>{{$imageGallery->name}}</strong></a><br/>
+                    
+		</div>
+			
 					<div class="panel-body">
 						<div class="row">
 						

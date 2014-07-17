@@ -17,7 +17,7 @@ class AuthController extends BaseController {
 	public function getSignup()
 	{
             
-		return View::make('signup', array(
+		return View::make('auth.signup', array(
 
 		));
 	}
@@ -38,14 +38,7 @@ class AuthController extends BaseController {
 		
 		if($validator->passes()){
 			$user = new User();
-			$user->email = $data['email'];
-			$user->first_name = $data['first_name'];
-			$user->second_name = $data['second_name'];
-			$user->alias = $data['alias'];
-			$user->password = Hash::make($data['password']);
-			$user->role_id = 1;
-			
-			$user->save();
+			$user->add($data);
 			
 			return Redirect::to('/login')->with('flash', 'New user created');
 		}
@@ -57,7 +50,7 @@ class AuthController extends BaseController {
 	}
 	
 	public function getLogin(){
-		return View::make('login', array(
+		return View::make('auth.login', array(
 
 		));
 	}
@@ -76,6 +69,7 @@ class AuthController extends BaseController {
 			if(Auth::attempt(array(
 				'email' => $data['email'],
 				'password' => $data['password'],
+				'active' => 1,
 			))){
 				return Redirect::to('/admin')->with('message', 'Login OK');
 			}
@@ -88,5 +82,24 @@ class AuthController extends BaseController {
 			$errors = $validator->messages();
 			return Redirect::to('/login')->withErrors($validator);
 		}
+	}
+	
+	public function getVerify(){
+		$data = Input::all();
+		
+		$signupToken = $data['signupToken'];
+		
+		$user = User::find($data['id']);
+		
+		if($signupToken == $user->signup_token){
+			$success = true;
+		}
+		else{
+			$success = false;
+		}
+		
+		return View::make('auth.verify', array(
+				'success' => $success,
+			));
 	}
 }

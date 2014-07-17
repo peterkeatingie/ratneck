@@ -193,11 +193,11 @@ return array(
 	
 	'ratsFolder' => 'rats_files',
 	
-	'carouselFolder' => '/images/carousel/',
+	'carouselFolder' => '/images/uploads/',
 	
 	'splash' => $_ENV['splash'],
 	'splashImage' => '/images/splash/splash.jpg',
 	
-	'thumbnailWidth' => 200,
+	'thumbnailWidth' => 250,
 
 );

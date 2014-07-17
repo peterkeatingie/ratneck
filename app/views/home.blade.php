@@ -32,9 +32,11 @@
                     <div class="row">
 
                         <div class="col-md-4">
+							@if($featuredPost->getImage())
                             <a class="fancybox thumbnail" href="{{$imagesFolder}}{{$featuredPost->getImage()->filename}}" class="thumbnail">
                                 <img src="{{$thumbsFolder}}{{$featuredPost->getImage()->getThumbnail()->filename}}" alt="Band">
                             </a>
+							@endif
                         </div>
                         
                         <div class="col-md-8">
@@ -88,9 +90,11 @@
                         <div class="row">
 
                                 <div class="col-md-4">
+										@if($post->getImage())
                                         <a class="fancybox thumbnail" href="{{$imagesFolder}}{{$post->getImage()->filename}}" class="thumbnail">
                                                 <img src="{{$thumbsFolder}}{{$post->getImage()->getThumbnail()->filename}}" alt="Band">
                                         </a>
+										@endif
                                 </div>
                                 <div class="col-md-8">
                                         {{$post->content}}

@@ -106,10 +106,12 @@ class AdminController extends BaseController {
 				$image->description = $data['description'];
 				$image->save();
 				
-				$imageGalleryImage = new ImageGalleryImage();
-				$imageGalleryImage->image_gallery_id = $data['gallery'];
-				$imageGalleryImage->image_id = $image->id;
-				$imageGalleryImage->save();
+				if($data['gallery']){
+					$imageGalleryImage = new ImageGalleryImage();
+					$imageGalleryImage->image_gallery_id = $data['gallery'];
+					$imageGalleryImage->image_id = $image->id;
+					$imageGalleryImage->save();
+				}
 				
 				if(isset($data['banner'])){
 					$carousel = new Carousel();

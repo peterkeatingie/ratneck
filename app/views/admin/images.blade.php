@@ -76,7 +76,7 @@
 					<div class="form-group">
 						{{ Form::label('gallery', 'Choose a gallery') }}
 					
-						{{ Form::select('gallery', $galleryFormOptions, null, array(
+						{{ Form::select('gallery', array_merge(array(0 => 'None'),$galleryFormOptions), null, array(
 							'class' => 'form-control',
 							)) }}
 							
