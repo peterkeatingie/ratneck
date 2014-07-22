@@ -93,6 +93,8 @@ class AuthController extends BaseController {
 		
 		if($signupToken == $user->signup_token){
 			$success = true;
+			$user->verified = 1;
+			$user->save();
 		}
 		else{
 			$success = false;

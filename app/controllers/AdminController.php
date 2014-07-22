@@ -85,8 +85,12 @@ class AdminController extends BaseController {
 		if($validator->passes()){
 			$file = Input::file('image');
 			$originalFilename = $file->getClientOriginalName();
-			$applicationFilename = time() . "_" . $originalFilename;
+
+			$fileBasename = pathinfo($originalFilename, PATHINFO_FILENAME);
+			$fileExtension = pathinfo($originalFilename, PATHINFO_EXTENSION);
 			
+			$applicationFilename = $fileBasename . "_" . time() . "." . $fileExtension;
+
 			$publicFolder = public_path();
 			
 			$imagesFolder = Config::get('app.imagesFolder');
@@ -94,10 +98,10 @@ class AdminController extends BaseController {
 			$destinationFolder = $publicFolder . $imagesFolder;
 			
 			$uploadSuccess = $file->move($destinationFolder, $applicationFilename);
-
+			
 			if($uploadSuccess){
 				
-				$thumbnailId = $this->createThumbnailImage($applicationFilename, $destinationFolder);
+				$thumbnailId = Thumbnail::createNew($applicationFilename);
 				
 				$image = new Image();
 				$image->filename = $applicationFilename;
@@ -130,41 +134,5 @@ class AdminController extends BaseController {
 			$errors = $validator->messages();
 			return Redirect::to('/admin/images')->withErrors($validator);
 		}
-	}
-	
-	protected function createThumbnailImage($applicationFilename, $originalFolder){
-		$publicFolder = public_path();
-		$thumbsFolder = Config::get('app.thumbnailsFolder');	
-		$destinationFolder = $publicFolder . $thumbsFolder;
-		
-		$fullImagePath = $originalFolder . $applicationFilename;
-		$thumbnailPath = $destinationFolder . "thumb_ " . $applicationFilename;
-		
-		$size = getimagesize($fullImagePath);
-		$width = $size[0];
-		$height = $size[1];
-		
-		$ratio = $height / $width;
-		
-		$thumbnailWidth = Config::get('app.thumbnailWidth');
-		$thumbnailHeight = $thumbnailWidth * $ratio;
-		
-		$thumbnail = imagecreatetruecolor($thumbnailWidth, $thumbnailHeight);
-		$original = imagecreatefromjpeg($fullImagePath);
-		
-		imagecopyresized($thumbnail, $original, 0, 0, 0, 0, $thumbnailWidth, $thumbnailHeight, $width, $height);
-		
-		//imagepng($thumbnail, $thumbnailPath, 9);
-		imagejpeg($thumbnail, $thumbnailPath, 60);
-						
-		imagedestroy($thumbnail);
-		
-		$thumbnailRecord = new Thumbnail();
-		
-		$thumbnailRecord->filename = "thumb_ " . $applicationFilename;
-		$thumbnailRecord->created_by = Auth::user()->id;
-		$thumbnailRecord->save();
-		
-		return $thumbnailRecord->id;
 	}
 }
