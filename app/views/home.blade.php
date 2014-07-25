@@ -229,38 +229,6 @@
 
             </div>
             
-            <!-- Social -->
-            
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <strong>Find Us Here</strong>
-
-                </div>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-xs-2">
-                            <a href="https://www.facebook.com/ratneck" target="_blank"><img class="img-responsive social-icon" src="./images/social_icons/facebook_icon_colour_48.png" /></a>
-                        </div>
-                        <div class="col-xs-2">
-                            <a href="https://www.twitter.com/ratneckband" target="_blank"><img class="img-responsive social-icon" src="./images/social_icons/twitter_icon_colour_48.png" /></a>
-                        </div>
-                        <div class="col-xs-2">
-                            <a href="https://www.youtube.com/channel/UCgLO3QnqY36mum6uTqCcZUA" target="_blank"><img class="img-responsive social-icon" src="./images/social_icons/youtube_icon_colour_48.png" /></a>
-                        </div>
-                        <div class="col-xs-2">
-                            <a href="http://ratneck.bandcamp.com/" target="_blank"><img class="img-responsive social-icon" src="./images/social_icons/bandcamp_icon_colour_48.png" /></a>
-                        </div>
-                        <div class="col-xs-2">
-                            <a href="http://www.breakingtunes.com/ratneck" target="_blank"><img class="img-responsive social-icon" src="./images/social_icons/breakingtunes_icon_colour_48.png" /></a>
-                        </div>
-                        <div class="col-xs-2">
-                            <a href="https://soundcloud.com/ratneck" target="_blank"><img class="img-responsive social-icon" src="./images/social_icons/soundcloud_icon_colour_48.png" /></a>
-                        </div>
-                    </div>
-                </div>
-    
-            </div>
-            
         </div>
     </div>
 
