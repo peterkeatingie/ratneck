@@ -29,9 +29,9 @@ class HomeController extends BaseController {
             // Get Video
             $video = Video::getHomePageItems(1)->first();
             
-            // Get Galleries
-            $imageGalleries = ImageGallery::all();
-            
+            // Get random images for home page
+			$images = Image::orderByRaw('RAND()')->limit(30)->get();			
+
             $imagesFolder = Config::get('app.imagesFolder');
             $thumbsFolder = Config::get('app.thumbnailsFolder');
 			$carouselFolder = Config::get('app.carouselFolder');
@@ -49,7 +49,7 @@ class HomeController extends BaseController {
                 'video' => $video,
                 'imagesFolder' => $imagesFolder,
                 'thumbsFolder' => $thumbsFolder,
-                'imageGalleries' => $imageGalleries,
+                'images' => $images,
 				'carouselFolder' => $carouselFolder,
                 ));
 	}

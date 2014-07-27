@@ -151,10 +151,6 @@
 
                         <div class="panel-body">
                             <div class="row">
-                            @foreach($imageGalleries as $imageGallery)
-
-
-                                <?php $images = $imageGallery->getImages(); ?>
 
                                 @foreach($images as $image)
                                 <div class="col-xs-3 col-md-2 remove-padding-left-right">
@@ -168,7 +164,6 @@
                                 </div>
                                 @endforeach
 
-                            @endforeach
                             </div>
                         </div>
 						
