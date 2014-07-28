@@ -20,7 +20,7 @@ class ImageController extends BaseController {
 		// Header image
 		$carouselImage = Carousel::getRandom();
 		
-		$imageGalleries = ImageGallery::all();
+		$imageGalleries = ImageGallery::orderBy('order', 'asc')->get();
 		
 		$featuredGallery = $imageGalleries->shift();
 		
