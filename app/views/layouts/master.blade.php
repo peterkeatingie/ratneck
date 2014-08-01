@@ -11,7 +11,6 @@
 
 		<!-- Blueimp gallery -->
 		<link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
-		<link rel="stylesheet" href="/bootstrap-image-gallery/css/bootstrap-image-gallery.min.css">
 
 		<!-- Site style -->
 		<link href="/css/style.css" rel="stylesheet">
@@ -149,7 +148,6 @@
 		
 		<!-- Blueimp Gallery -->
 		<script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
-		<script src="/bootstrap-image-gallery/js/bootstrap-image-gallery.min.js"></script>
 		
 		<!-- Site js -->
         <script src="/js/script.js"></script>

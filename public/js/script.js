@@ -17,7 +17,6 @@ $(document).ready(function() {
 	if(splash){
 		$('#splash').click();
 	}
-	
 });
 
 function openFancyBox(){
