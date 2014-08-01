@@ -8,9 +8,9 @@
     <div class="slides"></div>
     <!-- Controls for the borderless lightbox -->
     <h3 class="title"></h3>
-    <a class="prev">-</a>
-    <a class="next">-</a>
-    <a class="close">x</a>
+    <a class="prev">&lsaquo;</a>
+    <a class="next">&rsaquo;</a>
+    <a class="close">&times;</a>
     <a class="play-pause"></a>
     <ol class="indicator"></ol>
 </div>
