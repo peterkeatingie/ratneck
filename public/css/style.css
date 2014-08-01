@@ -150,6 +150,10 @@ h3, h4, h5{
 	margin: 5px;
 }
 
+.hidden{
+	display: none;
+}
+
 #md-fb-button{
     margin-top: 0px;
 }
@@ -179,6 +183,10 @@ h3, h4, h5{
         
     }
     
+	.hidden-mobile{
+		display: none;
+	}
+	
     .right-align{
         text-align: left;
     }

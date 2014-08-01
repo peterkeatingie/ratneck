@@ -16,9 +16,9 @@
     <!-- The container for the modal slides -->
     <div class="slides"></div>
     <!-- Controls for the borderless lightbox -->
-    <h3 class="title"></h3>
-    <a class="prev">&lsaquo;</a>
-    <a class="next">&rsaquo;</a>
+    <h3 class="title hidden"></h3>
+    <a class="prev hidden-mobile">&lsaquo;</a>
+    <a class="next hidden-mobile">&rsaquo;</a>
     <a class="close">&times;</a>
     <a class="play-pause"></a>
     <ol class="indicator"></ol>
