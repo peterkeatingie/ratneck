@@ -12,7 +12,7 @@
 	@endif
 	
 <!-- Blueimp gallery -->
-<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+<div id="blueimp-gallery" class="blueimp-gallery">
     <!-- The container for the modal slides -->
     <div class="slides"></div>
     <!-- Controls for the borderless lightbox -->
@@ -168,15 +168,26 @@
 							
 							<div class="col-md-12">
 
-							<div id="homeGallery">
+							<div id="home-gallery">
 								@foreach($images as $image)
 								
-									<a href="{{$imagesFolder}}{{$image->filename}}" title="{{$image->description}}" data-gallery>
+									<a href="{{$imagesFolder}}{{$image->filename}}" title="{{$image->description}}">
 										<img class="mythumb" src="{{$thumbsFolder}}{{$image->getThumbnail()->filename}}" alt="{{$image->description}}">
 									</a>
 								
 
 								@endforeach
+								
+								<script>
+									document.getElementById('home-gallery').onclick = function (event) {
+										event = event || window.event;
+										var target = event.target || event.srcElement,
+											link = target.src ? target.parentNode : target,
+											options = {index: link, event: event},
+											links = this.getElementsByTagName('a');
+										blueimp.Gallery(links, options);
+									};
+								</script>
 								
 							</div>
 							

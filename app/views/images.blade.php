@@ -42,15 +42,28 @@
 						@if($featuredGallery)
 							<?php $images = $featuredGallery->getImages(); ?>
 							
-							<div id="gallery{{$featuredGallery->id}}">
+							<div id="gallery-{{$featuredGallery->id}}">
 								@foreach($images as $image)
 								
-									<a href="{{$imagesFolder}}{{$image->filename}}" title="{{$image->description}}" data-gallery>
+									<a href="{{$imagesFolder}}{{$image->filename}}" title="{{$image->description}}">
 										<img class="mythumb" src="{{$thumbsFolder}}{{$image->getThumbnail()->filename}}" alt="{{$image->description}}">
 									</a>
 								
 
 								@endforeach
+								
+								<script>
+									var galleryId = "gallery-" + "{{$featuredGallery->id}}";
+									document.getElementById(galleryId).onclick = function (event) {
+										event = event || window.event;
+										var target = event.target || event.srcElement,
+											link = target.src ? target.parentNode : target,
+											options = {index: link, event: event},
+											links = this.getElementsByTagName('a');
+										blueimp.Gallery(links, options);
+									};
+								</script>
+								
 							</div>
 						@endif
 						</div>
@@ -86,16 +99,31 @@
 						
 							<?php $images = $imageGallery->getImages(); ?>
 				
-							<div id="gallery{{$imageGallery->id}}">
+							<div id="gallery-{{$imageGallery->id}}">
 								@foreach($images as $image)
 								
-									<a href="{{$imagesFolder}}{{$image->filename}}" title="{{$image->description}}" data-gallery>
+									<a href="{{$imagesFolder}}{{$image->filename}}" title="{{$image->description}}">
 										<img class="mythumb" src="{{$thumbsFolder}}{{$image->getThumbnail()->filename}}" alt="{{$image->description}}">
 									</a>
 								
 
 								@endforeach
+								
 							</div>
+							
+							<script>
+									var galleryId = "gallery-" + "{{$imageGallery->id}}";
+									console.log(galleryId);
+									document.getElementById(galleryId).onclick = function (event) {
+										event = event || window.event;
+										var target = event.target || event.srcElement,
+											link = target.src ? target.parentNode : target,
+											options = {index: link, event: event},
+											links = this.getElementsByTagName('a');
+										blueimp.Gallery(links, options);
+									};
+								</script>
+							
 						</div>
 						
 						</div>
@@ -126,15 +154,27 @@
 						
 							<?php $images = $imageGallery->getImages(); ?>
 				
-							<div id="gallery{{$imageGallery->id}}">
+							<div id="gallery-{{$imageGallery->id}}">
 								@foreach($images as $image)
 								
-									<a href="{{$imagesFolder}}{{$image->filename}}" title="{{$image->description}}" data-gallery>
+									<a href="{{$imagesFolder}}{{$image->filename}}" title="{{$image->description}}">
 										<img class="mythumb" src="{{$thumbsFolder}}{{$image->getThumbnail()->filename}}" alt="{{$image->description}}">
 									</a>
 								
 
 								@endforeach
+								
+								<script>
+									var galleryId = "gallery-" + "{{$imageGallery->id}}";
+									document.getElementById(galleryId).onclick = function (event) {
+										event = event || window.event;
+										var target = event.target || event.srcElement,
+											link = target.src ? target.parentNode : target,
+											options = {index: link, event: event},
+											links = this.getElementsByTagName('a');
+										blueimp.Gallery(links, options);
+									};
+								</script>
 							</div>
 						</div>
 						

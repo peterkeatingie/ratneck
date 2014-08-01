@@ -30,3 +30,6 @@ function resizeFeaturedPanel(){
 	console.log(panelBannerHeight);
 }
 
+$(function(){
+	console.log('function');
+});
