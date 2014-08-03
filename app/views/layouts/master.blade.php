@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>ratneck.com</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>ratneck.com</title>
 
-      <!-- Bootstrap -->
-      <link href="/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">
-      <link href="/css/style.css" rel="stylesheet">
+		<!-- Bootstrap -->
+		<link href="/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">
 
-      <link href="/fancybox/source/jquery.fancybox.css" rel="stylesheet">
+		<!-- Blueimp gallery -->
+		<link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+
+		<!-- Site style -->
+		<link href="/css/style.css" rel="stylesheet">
+		  
 	  
-	<!-- Google Analytics -->
-		  <script>
-			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		<!-- Google Analytics -->
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-			  ga('create', 'UA-46002278-1', 'ratneck.com');
-			  ga('send', 'pageview');
+		  ga('create', 'UA-46002278-1', 'ratneck.com');
+		  ga('send', 'pageview');
 
-			</script>
+		</script>
 			
     </head>
 
@@ -83,7 +87,7 @@
                       <li><a href="/news">News</a></li>
                       <li><a href="/music">Music</a></li>
                       <li><a href="/video">Video</a></li>
-                      <li><a href="/photos">Gallery</a></li>
+                      <li><a href="/gallery">Gallery</a></li>
                       <!--<li><a href="band">Band</a></li>-->
                       </ul>
 
@@ -136,9 +140,16 @@
 
         </div><!-- Container -->
 
+		<!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="/bootstrap-3.1.1/js/bootstrap.min.js"></script>
-        <script src="/fancybox/source/jquery.fancybox.js"></script>
+        
+		<!-- Bootstrap -->
+		<script src="/bootstrap-3.1.1/js/bootstrap.min.js"></script>
+		
+		<!-- Blueimp Gallery -->
+		<script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+		
+		<!-- Site js -->
         <script src="/js/script.js"></script>
         
     </body>

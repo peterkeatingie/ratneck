@@ -10,6 +10,20 @@
 			var splash = '<?php echo $splash; ?>';
 		</script>
 	@endif
+	
+<!-- Blueimp gallery -->
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title hidden"></h3>
+    <a class="prev hidden-mobile">&lsaquo;</a>
+    <a class="next hidden-mobile">&rsaquo;</a>
+    <a class="close">&times;</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>
+<!-- END Blueimp gallery -->	
 
     <div class="row" id="row-1">   
         <div class="col-md-6">
@@ -151,23 +165,38 @@
 
                         <div class="panel-body">
                             <div class="row">
+							
+							<div class="col-md-12">
 
-                                @foreach($images as $image)
-                                <div class="col-xs-3 col-md-2 remove-padding-left-right">
+							<div id="home-gallery">
+								@foreach($images as $image)
+								
+									<a href="{{$imagesFolder}}{{$image->filename}}" title="{{$image->description}}">
+										<img class="mythumb" src="{{$thumbsFolder}}{{$image->getThumbnail()->filename}}" alt="{{$image->description}}">
+									</a>
+								
 
-                                    <a class="fancybox thumbnail" href="{{$imagesFolder}}{{$image->filename}}" class="thumbnail">
-
-                                        <img class="mythumb" src="{{$thumbsFolder}}{{$image->getThumbnail()->filename}}" alt="Band">
-
-                                        </a>
-
-                                </div>
-                                @endforeach
+								@endforeach
+								
+								<script>
+									document.getElementById('home-gallery').onclick = function (event) {
+										event = event || window.event;
+										var target = event.target || event.srcElement,
+											link = target.src ? target.parentNode : target,
+											options = {index: link, event: event},
+											links = this.getElementsByTagName('a');
+										blueimp.Gallery(links, options);
+									};
+								</script>
+								
+							</div>
+							
+							</div>
 
                             </div>
                         </div>
 						
-						<div class="panel-footer"><h5><a href="/photos">More Photos</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
+						<div class="panel-footer"><h5><a href="/gallery">More Photos</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
 
                     </div>
                 </div>

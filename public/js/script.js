@@ -9,8 +9,6 @@ window.onload = function(){
 }
 
 $(document).ready(function() {
-    $('.fancybox').fancybox();
-
 
     $(window).resize(function(){
             resizeFeaturedPanel();
@@ -19,7 +17,6 @@ $(document).ready(function() {
 	if(splash){
 		$('#splash').click();
 	}
-	
 });
 
 function openFancyBox(){
@@ -32,3 +29,7 @@ function resizeFeaturedPanel(){
 	$('#panel-featured').css('min-height', panelBannerHeight);
 	console.log(panelBannerHeight);
 }
+
+$(function(){
+	console.log('function');
+});

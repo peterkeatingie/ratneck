@@ -24,6 +24,11 @@ class ImageController extends BaseController {
 		
 		$featuredGallery = $imageGalleries->shift();
 		
+		$halfWay = (int)ceil((count($imageGalleries)) / 2);
+		
+		$galleriesLeft = $imageGalleries->slice(0, $halfWay);
+		$galleriesRight = $imageGalleries->slice($halfWay);
+		
 		$imagesFolder = Config::get('app.imagesFolder');
 		$thumbsFolder = Config::get('app.thumbnailsFolder');
 		$carouselFolder = Config::get('app.carouselFolder');
@@ -33,8 +38,10 @@ class ImageController extends BaseController {
 			'carouselFolder' => $carouselFolder,
 			'imagesFolder' => $imagesFolder,
 			'thumbsFolder' => $thumbsFolder,
-			'imageGalleries' => $imageGalleries,
 			'featuredGallery' => $featuredGallery,
+			'galleriesLeft' => $galleriesLeft,
+			'galleriesRight' => $galleriesRight,
+			'halfWay' => $halfWay,
 			));
 	}
 

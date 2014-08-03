@@ -126,8 +126,8 @@ h3, h4, h5{
 }
 
 .remove-padding-left-right{
-	padding-left: 5px;
-	padding-right: 5px;
+	padding-left: auto;
+	padding-right: auto;
 }
 
 .thumbnail{
@@ -146,6 +146,12 @@ h3, h4, h5{
 .mythumb{
     max-height: 40px;
     min-height: 40px;
+	
+	margin: 5px;
+}
+
+.hidden{
+	display: none;
 }
 
 #md-fb-button{
@@ -177,6 +183,10 @@ h3, h4, h5{
         
     }
     
+	.hidden-mobile{
+		display: none;
+	}
+	
     .right-align{
         text-align: left;
     }
