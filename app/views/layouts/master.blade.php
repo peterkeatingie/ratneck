@@ -5,6 +5,9 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>ratneck.com</title>
+		
+		<!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
 		<!-- Bootstrap -->
 		<link href="/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">
@@ -139,9 +142,6 @@
             </div>
 
         </div><!-- Container -->
-
-		<!-- jQuery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         
 		<!-- Bootstrap -->
 		<script src="/bootstrap-3.1.1/js/bootstrap.min.js"></script>

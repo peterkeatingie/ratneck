@@ -8,4 +8,9 @@
 
 class Video extends SiteItem{
 
+	public function getYoutubeVideoId(){
+		$videoId = end((explode('/', $this->location)));
+
+		return $videoId;
+	}
 }

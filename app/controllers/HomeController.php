@@ -21,14 +21,15 @@ class HomeController extends BaseController {
 			
             // Get posts
             $featuredPost = Post::getFeaturedItem();
-            $posts = Post::getHomePageItems(3);
+            $posts = Post::getHomePageItems(4);
             
             // Get Music
             $track = Music::getHomePageItems(1)->first();
 
             // Get Video
             $video = Video::getHomePageItems(1)->first();
-            
+			$videos = Video::all();
+			
             // Get random images for home page
 			$images = Image::orderByRaw('RAND()')->limit(30)->get();			
 
@@ -47,6 +48,7 @@ class HomeController extends BaseController {
                 'posts' => $posts,
                 'track' => $track,
                 'video' => $video,
+				'videos' => $videos,
                 'imagesFolder' => $imagesFolder,
                 'thumbsFolder' => $thumbsFolder,
                 'images' => $images,

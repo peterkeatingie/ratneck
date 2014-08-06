@@ -66,8 +66,123 @@
     </div>
             
     <div class="row" id="row-2">
+	
 
-        <div class="col-md-6">
+        <div class="col-md-6 col-md-push-6">
+            <div class="row">
+			
+			<!-- Video -->
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+
+                        <div class="panel-body">
+                            <!--<iframe class="video-iframe-home" src="{{$video->location}}" frameborder="0" allowfullscreen></iframe>-->
+							
+								<!-- The Gallery as inline carousel, can be positioned anywhere on the page -->
+								<div id="blueimp-video-carousel" class="video-iframe-home blueimp-gallery blueimp-gallery-controls blueimp-gallery-carousel">
+									<div class="slides"></div>
+									<h3 class="title"></h3>
+									<a class="prev">&lsaquo;</a>
+									<a class="next">&rsaquo;</a>
+									<a class="play-pause"></a>
+								</div>
+<script>
+$(document).ready(function(){
+
+		var youTubeOptions = {
+			
+		};
+
+		blueimp.Gallery([
+			@foreach($videos as $video)
+					
+			{
+				href: '{{$video->location}}',
+				type: 'text/html',
+				youtube: '<?php echo $video->getYoutubeVideoId(); ?>',
+				poster: 'https://img.youtube.com/vi/<?php echo $video->getYoutubeVideoId(); ?>/maxresdefault.jpg'
+			},
+			
+			@endforeach
+      
+    ], {
+        container: '#blueimp-video-carousel',
+        carousel: true
+    });
+});
+</script>
+                        </div>
+
+                        <div class="panel-footer"><h5><a href="video">More Videos</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
+
+                     </div>
+
+                </div>
+				<!-- END Video -->
+			
+                <!-- Music -->
+                <div class="col-md-12">
+
+                    <div class="panel panel-default">
+
+                        <div class="panel-body">
+                            <iframe class="music-iframe-home" scrolling="no" frameborder="no" src="{{$track->location}}"></iframe>
+                        </div>
+
+                        <div class="panel-footer"><h5><a href="/music">More Music</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
+
+                    </div>
+                </div>
+                
+            
+            </div>
+            <div class="row">
+                <!-- Photos Panel -->
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+
+                        <div class="panel-body">
+                            <div class="row">
+							
+							<div class="col-md-12">
+
+							<div id="home-gallery">
+								@foreach($images as $image)
+								
+									<a href="{{$imagesFolder}}{{$image->filename}}" title="{{$image->description}}">
+										<img class="mythumb" src="{{$thumbsFolder}}{{$image->getThumbnail()->filename}}" alt="{{$image->description}}">
+									</a>
+								
+
+								@endforeach
+								
+								<script>
+									document.getElementById('home-gallery').onclick = function (event) {
+										event = event || window.event;
+										var target = event.target || event.srcElement,
+											link = target.src ? target.parentNode : target,
+											options = {index: link, event: event},
+											links = this.getElementsByTagName('a');
+										blueimp.Gallery(links, options);
+									};
+								</script>
+								
+							</div>
+							
+							</div>
+
+                            </div>
+                        </div>
+						
+						<div class="panel-footer"><h5><a href="/gallery">More Photos</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		
+		<div class="col-md-6 col-md-pull-6">
 				
             <!-- News -->
             
@@ -125,83 +240,7 @@
 
 				
         </div>
-	
-
-        <div class="col-md-6">
-            <div class="row">
-                <!-- Music -->
-                <div class="col-md-6">
-
-                    <div class="panel panel-default">
-
-                        <div class="panel-body">
-                            <iframe class="music-iframe-home" scrolling="no" frameborder="no" src="{{$track->location}}"></iframe>
-                        </div>
-
-                        <div class="panel-footer"><h5><a href="/music">More Music</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
-
-                    </div>
-                </div>
-
-                <!-- Video -->
-                <div class="col-md-6">
-                    <div class="panel panel-default">
-
-                        <div class="panel-body">
-                            <iframe class="video-iframe-home" src="{{$video->location}}" frameborder="0" allowfullscreen></iframe>
-                        </div>
-
-                        <div class="panel-footer"><h5><a href="video">More Videos</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
-
-                     </div>
-
-                </div>
-            
-            </div>
-            <div class="row">
-                <!-- Photos Panel -->
-                <div class="col-md-12">
-                    <div class="panel panel-default">
-
-                        <div class="panel-body">
-                            <div class="row">
-							
-							<div class="col-md-12">
-
-							<div id="home-gallery">
-								@foreach($images as $image)
-								
-									<a href="{{$imagesFolder}}{{$image->filename}}" title="{{$image->description}}">
-										<img class="mythumb" src="{{$thumbsFolder}}{{$image->getThumbnail()->filename}}" alt="{{$image->description}}">
-									</a>
-								
-
-								@endforeach
-								
-								<script>
-									document.getElementById('home-gallery').onclick = function (event) {
-										event = event || window.event;
-										var target = event.target || event.srcElement,
-											link = target.src ? target.parentNode : target,
-											options = {index: link, event: event},
-											links = this.getElementsByTagName('a');
-										blueimp.Gallery(links, options);
-									};
-								</script>
-								
-							</div>
-							
-							</div>
-
-                            </div>
-                        </div>
-						
-						<div class="panel-footer"><h5><a href="/gallery">More Photos</a> <span class="glyphicon glyphicon-chevron-right"></span></h5></div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
+		
     </div>
                 
     <div class="row" id="row-3">
