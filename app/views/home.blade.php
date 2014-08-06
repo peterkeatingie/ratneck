@@ -100,7 +100,7 @@ $(document).ready(function(){
 				href: '{{$video->location}}',
 				type: 'text/html',
 				youtube: '<?php echo $video->getYoutubeVideoId(); ?>',
-				poster: 'https://img.youtube.com/vi/<?php echo $video->getYoutubeVideoId(); ?>/maxresdefault.jpg'
+				poster: 'https://img.youtube.com/vi/<?php echo $video->getYoutubeVideoId(); ?>/0.jpg'
 			},
 			
 			@endforeach
