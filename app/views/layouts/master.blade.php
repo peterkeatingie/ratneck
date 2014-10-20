@@ -5,9 +5,6 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>ratneck.com</title>
-		
-		<!-- jQuery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
 		<!-- Bootstrap -->
 		<link href="/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">
@@ -17,6 +14,18 @@
 
 		<!-- Site style -->
 		<link href="/css/style.css" rel="stylesheet">
+		
+		<!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        
+		<!-- Bootstrap -->
+		<script src="/bootstrap-3.1.1/js/bootstrap.min.js"></script>
+		
+		<!-- Blueimp Gallery -->
+		<script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+				
+		<!-- Site js -->
+        <script src="/js/script.js"></script>
 		  
 	  
 		<!-- Google Analytics -->
@@ -142,15 +151,8 @@
             </div>
 
         </div><!-- Container -->
-        
-		<!-- Bootstrap -->
-		<script src="/bootstrap-3.1.1/js/bootstrap.min.js"></script>
+
 		
-		<!-- Blueimp Gallery -->
-		<script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
-		
-		<!-- Site js -->
-        <script src="/js/script.js"></script>
         
     </body>
 </html>

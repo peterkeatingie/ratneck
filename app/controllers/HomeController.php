@@ -29,7 +29,7 @@ class HomeController extends BaseController {
             // Get Video
             $video = Video::getHomePageItems(1)->first();
 			$videos = Video::all();
-			
+
             // Get random images for home page
 			$images = Image::orderByRaw('RAND()')->limit(30)->get();			
 

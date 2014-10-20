@@ -47,9 +47,7 @@
 
                         <div class="col-md-4">
 							@if($featuredPost->getImage())
-                            <a class="fancybox thumbnail" href="{{$imagesFolder}}{{$featuredPost->getImage()->filename}}" class="thumbnail">
-                                <img src="{{$thumbsFolder}}{{$featuredPost->getImage()->getThumbnail()->filename}}" alt="Band">
-                            </a>
+                                <img class="thumbnail img-responsive" src="{{$thumbsFolder}}{{$featuredPost->getImage()->getThumbnail()->filename}}" alt="Band">
 							@endif
                         </div>
                         
@@ -86,30 +84,25 @@
 									<a class="next">&rsaquo;</a>
 									<a class="play-pause"></a>
 								</div>
+	
 <script>
-$(document).ready(function(){
-
-		var youTubeOptions = {
-			
-		};
 
 		blueimp.Gallery([
 			@foreach($videos as $video)
-					
 			{
+				title: '{{$video->title}}',
 				href: '{{$video->location}}',
 				type: 'text/html',
 				youtube: '<?php echo $video->getYoutubeVideoId(); ?>',
 				poster: 'https://img.youtube.com/vi/<?php echo $video->getYoutubeVideoId(); ?>/0.jpg'
 			},
-			
 			@endforeach
       
     ], {
         container: '#blueimp-video-carousel',
         carousel: true
     });
-});
+
 </script>
                         </div>
 
@@ -220,9 +213,7 @@ $(document).ready(function(){
 
                                 <div class="col-md-4">
 										@if($post->getImage())
-                                        <a class="fancybox thumbnail" href="{{$imagesFolder}}{{$post->getImage()->filename}}" class="thumbnail">
-                                                <img src="{{$thumbsFolder}}{{$post->getImage()->getThumbnail()->filename}}" alt="Band">
-                                        </a>
+											<img class="thumbnail img-responsive" src="{{$thumbsFolder}}{{$post->getImage()->getThumbnail()->filename}}" alt="Band">
 										@endif
                                 </div>
                                 <div class="col-md-8">

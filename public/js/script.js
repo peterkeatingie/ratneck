@@ -9,7 +9,7 @@ window.onload = function(){
 }
 
 $(document).ready(function() {
-
+	
     $(window).resize(function(){
             resizeFeaturedPanel();
     });
@@ -18,10 +18,6 @@ $(document).ready(function() {
 		$('#splash').click();
 	}
 });
-
-function openFancyBox(){
-    $('.fancybox').open();
-}
 
 function resizeFeaturedPanel(){
 	// Make the featured item body at least the height of the banner panel body
