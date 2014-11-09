@@ -14,6 +14,29 @@ class PostController extends BaseController {
 	|	Route::get('/', 'HomeController@showWelcome');
 	|
 	*/
+	
+	public function getIndex() {
+		
+	}
+	
+	public function getEdit() {
+		$input = Input::all();
+		
+		if (isset($input['id'])) {
+			$post = Post::find($input['id']);
+			
+			return View::make('post.edit', array(
+				'post' => $post,
+			));
+		
+		} else {
+			$posts = Post::all();
+		
+			return View::make('post.edit', array(
+				'posts' => $posts,
+			));
+		}
+	}
 
 	public function getNew()
 	{

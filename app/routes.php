@@ -37,6 +37,16 @@ Route::get('admin/images', array(
 	'uses' => 'AdminController@getImages',
 ));
 
+Route::get('post/new', array(
+	'before' => 'auth',
+	'uses' => 'PostController@getNew',
+));
+
+Route::get('post/edit', array(
+	'before' => 'auth',
+	'uses' => 'PostController@getEdit',
+));
+
 Route::post('admin/images/upload', array(
 	'before' => 'auth',
 	'uses' => 'AdminController@getUploadImage',
