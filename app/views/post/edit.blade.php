@@ -8,6 +8,8 @@
                 <div class="panel-body">
 					<div class="row">
 						<div class="col-sm-6">
+						
+							<a class="btn btn-info" href="new">Add New</a>
 							
 							<?php if (isset($posts)) : ?>
 							

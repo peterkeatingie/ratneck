@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'info@ratneck.com', 'name' => 'Rat Neck'),
+	'from' => array('address' => 'peter.keating.ie@gmail.com', 'name' => 'Rat Neck'),
 
 	/*
 	|--------------------------------------------------------------------------
