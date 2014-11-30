@@ -100,6 +100,9 @@
                       <li><a href="/music">Music</a></li>
                       <li><a href="/video">Video</a></li>
                       <li><a href="/gallery">Gallery</a></li>
+					  <?php if (Auth::check()) : ?>
+						<li><a href="/admin">Admin</a></li>
+						<?php endif; ?>
                       <!--<li><a href="band">Band</a></li>-->
                       </ul>
 

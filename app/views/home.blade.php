@@ -191,7 +191,7 @@
                         
                         <div class="col-md-6 right-align meta-info">
                             <?php
-                                $date = date('jS M Y', strtotime($post->created_on));
+                                $date = date('jS M Y', strtotime($post->created_at));
                             ?>
                             
                             <i><small>{{$date}}

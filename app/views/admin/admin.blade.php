@@ -19,6 +19,7 @@
 				
 				<a href="admin/images"><button type="button" class="btn btn-default">Images</button></a>
 				<a href="admin/galleries"><button type="button" class="btn btn-default">Galleries</button></a>
+				<a href="post/edit"><button type="button" class="btn btn-default">Posts</button></a>
 				
 			</div>
 

@@ -17,6 +17,10 @@ $(document).ready(function() {
 	if(splash){
 		$('#splash').click();
 	}
+	
+	$('#image-upload').click(function(){
+		
+	});
 });
 
 function resizeFeaturedPanel(){

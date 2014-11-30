@@ -61,7 +61,7 @@
 					
 					<div class="form-group">
 					
-						{{ Form::label('description', 'Enter a description') }}
+						{{ Form::label('description', 'Image caption') }}
 		
 						{{ Form::text('description', null, array(
 							'class' => 'form-control',

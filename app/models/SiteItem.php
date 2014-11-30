@@ -7,7 +7,7 @@ class SiteItem extends Eloquent
             $callingClass = get_called_class();
 
             $item = $callingClass::where('featured', '=', 1);
-            $item->orderBy('created_on', 'desc');
+            $item->orderBy('created_at', 'desc');
             $item->take(1);
 
             return $item->get()->first();
@@ -18,7 +18,7 @@ class SiteItem extends Eloquent
             $callingClass = get_called_class();
 
             $item = $callingClass::where('home_page', 1);
-            $item->orderBy('created_on', 'desc');
+            $item->orderBy('created_at', 'desc');
 
             if($limit){
                 $item->take($limit);
@@ -30,7 +30,7 @@ class SiteItem extends Eloquent
         public static function allByDateDesc(){
             $callingClass = get_called_class();
 
-            $item = $callingClass::orderBy('created_on', 'desc');
+            $item = $callingClass::orderBy('created_at', 'desc');
             
             return $item->get();
         }
@@ -39,7 +39,7 @@ class SiteItem extends Eloquent
             $callingClass = get_called_class();
             
             $item = $callingClass::where('slug', $slug);
-            $item->orderBy('created_on', 'desc');
+            $item->orderBy('created_at', 'desc');
             
             $item->take(1);
 

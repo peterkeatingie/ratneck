@@ -47,6 +47,11 @@ Route::get('post/edit', array(
 	'uses' => 'PostController@getEdit',
 ));
 
+Route::post('post/save', array(
+	'before' => 'auth',
+	'uses' => 'PostController@save',
+));
+
 Route::post('admin/images/upload', array(
 	'before' => 'auth',
 	'uses' => 'AdminController@getUploadImage',
